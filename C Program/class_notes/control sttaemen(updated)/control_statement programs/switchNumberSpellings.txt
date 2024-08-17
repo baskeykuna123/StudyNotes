@@ -1,0 +1,79 @@
+//program to demonstrate the use of switch case statement(Program to check the spellings of the numbers)
+#include<stdio.h>
+int main()
+{
+	int i;
+	
+	printf("\nEnter the number : ");   //z
+	scanf("%d",&i);
+	
+	
+	switch(i)
+	{
+		case 0:
+			printf("zero");
+			break;
+			
+		case 1:
+			printf("one ");
+			break;
+			
+		case 2:
+		    printf("two");
+			break;
+			
+			
+		case 3:
+		    printf("three");
+			break;
+			
+		case 4:
+		      printf("four");
+			  break;
+			
+		case 5:
+		      printf("five");
+			  break;
+			  
+		case 6:
+		      printf("six");
+			  break;
+		
+		case 7:
+		      printf("seven");
+			  break;
+			 
+		case 8:
+		      printf("eight");
+			  break;	  
+			  	  
+		case 9:
+		      printf("nine");
+			  break;
+			
+		case 10:
+		      printf("ten");
+			  break;	  
+			  
+		default:
+			printf("invalid number..");
+			
+			  
+		}
+	printf("\n\nbye..");
+		
+		return 0;
+}
+/*
+output:
+
+Enter the number : 9
+nine
+
+bye..   */
+
+/*
+Enter the number : 15				//got the output as invalid number because we did not write the switch case satatement for the number 15 
+invalid number..
+
+bye..     */

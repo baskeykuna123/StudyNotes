@@ -1,0 +1,138 @@
+		STRING IN C
+
+-The string can be defined as the one-dimensional array of characters terminated by a null ('\0'). 
+
+-The character array or the string is used to manipulate text such as word or sentences. Each character in the array occupies one byte of memory, and the last character must always be 0.
+
+- The termination character/null ('\0') is important in a string since it is the only way to identify where the string ends. 
+
+- When we define a string as char s[10], the character s[10] is implicitly initialized with the null in the memory.
+
+There are two ways to declare a string in c language.
+
+1.By char array
+2.By string literal
+	
+
+1.string by char array
+
+char ch[12]={'P', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n','g', '\0'};    //char array
+
+As we know, array index starts from 0, so it will be represented as =
+
+FIGURE
+
+
+-While declaring and initializing string, size is not mandatory.
+E.g    char ch[]={'P', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n','g', '\0'};
+
+
+2. string by the string literal
+
+char ch[]="programming ";
+
+In such case, '\0' will be appended at the end of the string by the compiler.
+
+
+
+*STRING FUNCTIONS
+
+There are many important string functions defined in string.h library.
+
+1.string length
+syntax  :
+
+  strlen(string_name);
+
+returns the length of string name. It doesn't count null character '\0'.
+
+E.G   char c1[] ={'P', 'r', 'o', 'g', 'r', 'a', 'm', 'm', 'i', 'n','g', '\0'}; 
+    strlen(c);	
+
+
+
+2. string copy 
+strcpy(destination,source)			//syntax
+it copies the conetents of source into destination
+source =>the string which you want to copy
+dest=> the string in which you want to copy another/source
+
+3. string concatenation/attach/join
+
+ strcat(first_string, second_string)
+
+this function conacatenates  two strings and results is returned to the first string
+
+
+4. string compare
+
+strcmp(first_string, second_string)
+
+compares two string and return 0 if both strings are equal else return 1 or -1
+
+=>if the first character of first string is smaller than the first character of second string then it return -1
+=>if the first character of first string is greater than the first character of second string then it return 1
+=> and if the first character of both the strings are same then it checks for the next char
+
+
+5. string reverse
+Syntax:
+    strrev(string_name)
+strrev
+
+this fun returns reverse of the given string
+
+6. string lowercase
+
+strlwr(string_name)
+
+this fun returns the string characters in lowercase letters
+
+7. string uppercase
+
+strupr(string_name)
+
+this fun returns the string characters in uppercase letters
+
+
+8. strstr()
+used to findout substring(subpart of your substring) from given input string
+
+char *strstr(const char *string, char *match)
+
+this function returns pointer to the first occurences of the matched string in the givven string
+
+
+char str[]="have a nice day and bye";
+ char *ptr;
+
+strstr(str,"nice");
+
+
+
+
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	     char str[]="c is a procedural oriented programming lang ";
+	      char *subptr;
+	      
+	      
+	      subptr=strstr( str, "oriented");  //substring is started from the string(programming) mentioned in the parameter list of strstr() 
+	      
+	     printf("\n\nthe sub string of given string is : %s",subptr);
+	  return 0;   
+	     
+}
+
+
+
+
+
+
+
+
+
+

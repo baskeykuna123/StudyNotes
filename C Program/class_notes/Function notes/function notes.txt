@@ -1,0 +1,558 @@
+			FUNCTION
+
+- In C, we can divide a large program into smallest part known as function
+
+- function is a group/ of statements that together perform task.
+
+- the function contains set of prog statements enclosed by { }
+
+-A fun can be called multiple times to reuse it
+
+-fun is also known as procedure/subroutines
+
+- Collection of multiple statements can together perform a tasks..
+
+- Every c program has at least one function which is main() where the execution of our program start
+
+
+***BENEFITS/ADVANTAGES OF FUNCTION
+
+1. Avoid repition of code
+2. increase program readability
+3. we can call c fun any number of time and at anywhere
+4. a big code is difficult to read so we can divide that big code into functions(smaller parts of  program) so that our prog is organized,easy to undersatnd,and reusable
+5. function can be individually tested which is more convenient
+6. function reduces the length of the program by using it at appropriate places
+
+
+****FUCTION TERMINOLOGY/ELEMENTS/COMPONENTS
+
+1. function prototype/declaration
+    -A function declaration tells the compiler about fun name,return type,parameters
+    - we can declare function outside the main() function
+    - function name always start with lowercase letters
+    - the variables defines inside function paranthesis that is called as parameters
+
+
+SYNTAX:   
+             return_type fun_name(argument_list/parameter list);     //fun declaration
+
+
+e.g           double      calArea(double pi,int r)
+  //pi*r*r
+
+calArea();
+
+
+int a,b,c;
+
+2. Function definition
+-A fun definition provides the actual body of the function
+
+-we have provide fun definition outside the main() function
+
+          SYNTAX:
+             return_type fun_name(argument_list/parameter list)
+	     {
+                //function body/set of statement;
+
+             }
+  
+
+ e.g        double calArea( double pi,int r )
+          {
+
+             double res = pi*r*r;
+            return res;
+          }
+
+         
+
+3. function calling
+ fun can be called anywwhere in the prog. but parameter list must not be differ in fun calling and fun declaration
+
+        double pi,r;
+        double res;
+e.g        double calArea(double pi,int r)     //fun definition
+          {
+             double res = pi*r*r;
+             printf("%lf",res);
+          }
+
+         int main()       
+        {
+           calArea(p,radious)			//fun calling
+        }
+
+
+*Return Value
+-A c fun may or may not return any value from the fun. if you don't have to return any values from the fun you can use void return type
+
+-if you want to return any values from the fun you can use any of the datatype(int double float long) while you declare the fun
+
+returnType  fun_name(parameter_list)
+{
+    body of function
+}
+
+
+1. return type  => it specifies which type of data is returned  by the function to the user
+2.function name => it is an any valid java identifier
+3.parameter list=> parameter list specifies which type of data is used by the function 
+4.body of function=> performs actual opeartion on the variables declared inside function parameter list 
+
+
+*TYPES of function
+
+1. Userdefined function
+are functions which are created by the c programmer, so that he/she can use it many times
+
+2. inbuilt/library function
+are the functions which are declared in the c header files such as scanf(), printf(),gets(),pow(),strcpy()
+
+
+* scope\accessibility & lifetime of variables in fun
+
+A scope in any programming is a region/space of the program where a defined var can have its existence & beyond that var can not be accessed
+
+-there are 3 places where var can be declared:
+
+1.  local variables => inside a fun or block
+2. global variables => outside a fun  
+3. in the definition of fun parameters => formal parameters	
+
+local var
+they can be used by the statements that are inside taht function or block of code
+
+
+global var
+global var are generally declared on top of the prog
+global var hold their  values throughout the life time of program
+
+formal parameters
+are treated as local var within a fun
+ 
+***Different aspects/ways of function calling
+
+A function may or may not accept any argument. It may or may not return any value. Based on these facts, There are four different aspects of function calls.
+
+1.function without arguments and without return value
+
+#include<stdio.h>
+void add()
+{
+	int a,b;
+	printf("Enter value of a,b : ");
+	scanf("%d %d",&a,&b);
+	int c= a+b;
+	
+	printf("addition is = %d",c);
+}
+
+main()
+{
+	add();
+}
+
+
+
+
+2.function without arguments and with return value
+#include<stdio.h>
+int add()
+{
+	int a,b;
+	printf("Enter value of a,b : ");
+	scanf("%d %d",&a,&b);
+	return a+b;
+}
+
+main()
+{
+	int res=add();
+	printf("addition is = %d",res);
+}
+
+
+3.function with arguments and without return value
+
+#include<stdio.h>
+void add(int a,int b)
+{
+   printf("add=%d",a+b);
+}
+main()
+{
+	int a,b;
+	
+	printf("Enter value of a,b : ");
+	scanf("%d %d",&a,&b);
+    int c= a+b;
+    add(a,b);
+}
+
+
+4.function with arguments and with return value
+
+#include<stdio.h>
+int add(int a,int b)
+{
+  return a+b;
+}
+
+main()
+{
+	int a,b;
+	
+	printf("Enter value of a,b : ");
+	scanf("%d %d",&a,&b);
+    
+    printf("add is = %d",add(a,b));
+}
+
+
+
+//WAP to define a fun Avg() 
+//avg = (math+sci+eng)/total subjects;
+
+#include<stdio.h>
+
+float avg(int math,int sci,int eng,int his);
+
+float avg(int math,int sci,int eng,int his)
+ {
+    float grade = (math+sci+eng+his)/4;
+ 	  return grade;           
+ }
+ 
+ main()
+ {
+ 	int math,sci,eng,his;
+ 	
+ 	printf("Enter the marks of math,sci,eng,his : ");
+ 	scanf("%d %d %d %d",&math,&sci,&eng,&his);
+ 	
+ 	printf("avg of marks are : %f ",avg(math,sci,eng,his));
+ }
+
+
+
+*STORAGE(memory space )CLASSES IN C
+
+
+these storage classes are used to determine the lifetime,visibility/access,memory location and initial value of a var
+-there are 4 types of storage classes in c
+
+1. Automatic//local
+2. External/global
+3. Static
+4. Register
+
+
+1. Automatic var
+-keyword => auto var are allocated memory at runtime
+-
+-scope/lifetime/visibility => the scope of auto var is limited to block/fun in which they are defined
+
+- default value=> default value of auto var is garbage value
+
+- every local var is automatic in c by default
+
+PROGRAM
+
+#include<stdio.h>
+main()
+{
+	auto int i=1;
+	{
+		auto int i=2;
+		{
+			auto int i=3;
+			printf("%d\n",i);
+		}
+		printf("%d\n",i);
+	}
+	printf("%d\n",i);
+}
+
+
+
+2. External var
+- the var are declared as extern  are not allocated any memory 
+- it is only declaration and intended to specify that var is declared elsewhere in the program
+- the default initial value of this var is 0  or otherwise null
+- we can defined/initialized extern var globally. 
+- if var is decalred as extern then the compiler searches for that var to be initialization somewhere in the program which may be extern or static. 
+- if it is not dclared globally then the compiler will show an an error 
+
+#include <stdio.h>  
+
+int main()  
+{  
+   extern int a;   
+   printf("%d",a);  
+}  //error
+
+
+
+***//Declaring variable globally
+#include <stdio.h>  
+#include <stdio.h>
+int i ; 
+int main()  
+{  
+    extern int i;
+    i=7;
+    printf("%d\n",i); 
+	
+	fun(); 
+}  
+
+void fun()
+{
+	printf("%d\n",i);
+}
+
+
+3. Static
+
+Static var are visible only to fun or the block in which they are defined//just like auto var
+
+the static var can hold their value between multiple fun calls
+
+default initial value of static var is 0 otherwise null
+
+static var persists only one value throughout the program/end of the program
+
+#include<stdio.h>
+void fun()
+{
+	static int i=8;
+	printf("%d\n",i);
+	i++;
+}
+
+main()
+{
+    fun();
+    fun();
+    fun();
+}
+/*
+output:
+
+8
+9
+10  */
+
+
+4. register var
+
+Register are temporary storage in CPU
+
+the var which defined as register var is allocated memory in CPU registers depeding upon the  memory remining in CPU 
+
+initial default value 0
+
+The register should only be used for variables that require quick access such as counters
+
+
+#include<stdio.h>
+main()
+{
+    register int i;
+
+    for(i=0;i<=5;i++)
+    {
+       printf("%d\n",i);
+   }
+
+}
+
+There are two ways to pass data into the function
+
+1.call by value /pass by value
+ 
+-in call by value the value of the var is passed into the fun call as actual parameter 
+
+-in call by value the values of the actual parameters can be copied to formal parameters
+
+-in call by value we CANNOT modify the values of actual parameters by the formal parameters
+
+ because changes made inside the fun definition is limited to the fun only
+
+in call by value the memory location is different  for both formal parametrs and actual parameters	
+
+
+
+//program for call by value
+
+#include<stdio.h>
+
+void change(int n)
+{
+ n=n+100;     //here the value of n is 200 (n=n+100 means 200=100+100) but this changing of value is limited to this fun only.it can't               //change the value of actual parametrs. they are as it is i.e100
+	
+}
+main()
+{
+	 int n=100;
+	//printf("enter the number  : ");
+	//scanf("%d",n);
+	
+	printf("before change value of n = %d",n);//100
+	
+	change(n); 		//in call by value we can't modify the value of actual paarametrs by the formal parameters
+	
+	printf("\n\nAfter change value of n = %d",n);//100
+}
+/*
+output:
+before change value of n = 100
+
+After change value of n = 100   */
+
+
+
+
+2.call by reference/address or pass by refrence
+
+in call by refrence the address of the var is passed into the fun call as actual parameter 
+
+in call by ref we CAN modify the value of actual parameters by changing the formal parameter s
+
+in call by ref the memory location is similar for both formal parametrs and actual parameters
+
+
+//program for call by reference/address
+#include<stdio.h>
+void change(int *n)      //we are passing address in this function at the time of calling ,hence use * (pointer) variable
+{
+ *n=*n+100;
+  
+ // change(n);
+}
+main()
+{
+ 	int n=100;
+	//printf("enter the number  : ");
+	//scanf("%d",&n);   
+	printf("before change value of n = %d",n);//100
+	
+	change(&n); //200  //here we pass address of n instead of value //in call by refrence value of actual paarameters are 				//change/modify by the formal parameters hence the value of n gets change by 200 from 100
+	printf("\n\nAfter change value of n = %d",n);//100
+}
+/*
+output:
+before change value of n = 100
+
+After change value of n = 200  */
+
+
+      call by value								call by reference
+
+1.in call by value the value of the var is passed into                 1.in call by value the address of the var is passed into 
+fun call as actual parameter 						the fun call as actual parameter 					
+
+2.in call by value we CANNOT modify the values of actual  		2. in call by ref we CAN modify the values of the actual 
+ parameters by the formal parameters because changes made                   parameters by the formal parametrs because changes made
+ inside the fun definition is limited to the fun only			inside the fun may affect to the value of the actual parameter
+
+3.in call by value the memory location is DIFFRERNT  for                3.in call by ref the memory location is SIMILAR for
+both formal parametrs and actual parameters				both formal parametrs and actual parameters
+
+
+*RECURSION
+The process in which function call itself directly or indirectly is called as recursion. 
+
+And corresponding function is called as recursive function
+
+
+8!=   8*7*6*5*4*3*2*1=
+
+5! = 5*4*3*2*1
+
+3!=3*2*1
+
+differce between direct and indirect?
+
+A function fun1 is called direct recursive if it calls the same function fun1.
+A function fun1 is called indirect recursive if it calls another fun2 and fun2 then calls fun1 directly or indirectly
+
+
+//program to show the use of recursion(find the factorial of given number)
+
+//10*9*8*7*6*5*4*3*2*1
+//n*(n-1)*(n-2)*(n-3)*(n-4)
+
+
+#include<stdio.h>
+
+int fact(int n)
+{
+	if(n==0 )
+	{
+		return 1;
+	}
+	else if(n==1)
+	{
+		return 1;
+	}
+	else 
+	{      //n=5
+	   return  n*fact(n-1);    //5*4*3*2*1    //recursive function fact()
+        }
+	
+}
+
+int main()
+{
+	int n=5;//3*2*1
+	
+     int  f=fact(n);
+	
+	printf("fact of %d is = %d",n,f);
+}
+/*
+output:
+
+fact of 5 is = 120 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

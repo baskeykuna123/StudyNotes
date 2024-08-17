@@ -1,0 +1,254 @@
+1. Introduction and First Program
+
+A. Why Programming? 
+
+     i. why programming is required?
+         language=>
+             -language is a media through which we can communicate with each other. 
+                   
+             -Similarly, if you you want to communicate with computer you can communicate with the help of language. 
+                   
+             -But, computer doesn't understand laguages like hindi,english etc.Computers can only understand instructions/binary(0,1)
+                   
+             -We can give instructions to the computer and to communicate with computers we need to do a programming and that                       programming we can do by using programming languages 
+
+    
+   ii.What is Programming?
+     
+            -Programming Language is a language through which we can communicate and interact with computers 
+      
+           
+            -Programming is way to "instruct the computer" to perform various tasks
+     
+            -Provide the set of instructions to the computer and that set of instructions are written in the lang that computer can 	              understand that in the form of machine lang(0,1)
+     
+            - 1. adding the two number and perform even odd operation.
+   
+	    -Program is nothing but the set of instructions which are executed by machine/system.
+   
+
+
+* Programming helps=>
+    
+     - To enhanceand & increase the power of computers and internet(by developing applications )
+    
+     - To speeding the input and output of machine
+    
+     - To automate, collect, anlayze, manage and calculate the processing of data and info.
+     
+     - Programming helps us to develop our own games, social networking site, our own profile page and the e commerce platform like        amazon
+     
+
+B. Types of Programming
+     
+
+  1. Pocedural/function Programming
+        -Procedural programming is nothing but the use of code in step wise procedures to develop application
+        
+        e.g To develop a simple bank account application procedurally what steps you have to follow: You can create a different                  procedures to perform diferent tasks like,
+         
+          -1.account() => for  creating an account for individuals
+          -2.deposit() and withdraw() => deposit and withdraw
+	  -3.transfer() => trasfering funds between 2 different accounts
+          -4.accounts() => recording all the changes that occures with all accounts
+      
+        - Procedure is nothing but block of code which has set of instructions OR
+        - Procedure is nothing but the large prog is divided into smaller parts.
+        
+      
+
+   
+int addition()    //here,addition() is a procedure/function/method
+{         
+ int  1003;   //78,5
+ int c=a+b;
+ printf("%d",c);
+}
+
+main()
+{
+    addition()
+}
+  
+
+
+     2. Functional Prog
+        
+         - Designed to handle symbolic computations and used to perform some mathematical functions e.g sqrt(), pow(2,3)
+         - doesn't support any conditional statement and looping state. Because they directly use fun and fun calls
+     
+
+     3. Object Oriented Programming(OOP)
+        
+
+          - based on object and classes and that object consists of data/variable and function/procedure add(), sub()
+  
+          - class is collection of objects
+
+          - objects is a one part of a class
+
+	 e.g student class(collection of object)
+             sanyog,pooja,faisal object of class c batch(instance or part of  class)
+        
+        =>OOP has a several advantages over procedural programming / c 
+           
+           -oop's is faster and easy to execute.
+	   -provides clear structure of prog
+           -OOP helps to keep the code DRY(Don't Repeate Yourself)
+        
+
+   
+ 4. Scripting Programming
+        
+         - Uses some scripts/file to develop the applications.
+         
+         - Script consists of set of commands or instructions 
+         
+         - Scripts is combination of some procedures, function, object or classes
+         
+         - That scripts are used to develop web applcations
+         
+         - Scipting Programming languages are usually interpreted at runtime rather than compile time
+
+     
+     
+C. Introduction C
+    - It is procedural/function programming lang. It devloped by Dennis Ritchie in 1972.
+  
+    - C mainly used to do system programming.
+    
+    - Main feature of c is low level memory access, a simple set of keywords
+
+    - use to developed o.s application and complier
+    
+    - many later language has borrowed syntax from  'c'. Like syntax of java,Php,Js are largly depends upon the syntax of c       programming language  
+     
+
+
+D. Benefits of C
+    - it is medium level lang. It has both low level/machine understable  and higher level/human undestandable  fuctionality
+    
+    - we can use c to make driver(s/w application which we can use to control h/w) or kernel 
+    
+    - It is a structural programming language that allows complex structure to be broken into simpler  programs.This smaller program       is called as function
+    
+    - C is case sensitive language, so uppercase and lowercase have a different meaning
+
+  int  data=8,   DATA=89;
+
+
+    - C is a general purpose language used for game designing and graphics designing
+    
+    - C has riched library function
+          int pow(2,3)
+  
+
+E. Some Facts about C
+    
+    - It is the only lang. exits for longer period of time in the history of programming.
+    
+    - pupular linux kernel and unix appl.are developed using c
+    
+    - c is successor of B. 
+
+    - c18 is the latest version of c prog language published in june 2018
+    
+    - It is basis of many different language like cpp, java 
+
+
+F. Understanding First C Program/ structure of C program
+
+#include<stdio.h>   //header(the one which we declare at the top of the program) files declaration  
+                     
+                      1. <stdio.h> is a header file which we decalre at the start of the program. This header file stands for                          "standard input output" and it has extension .h
+            		 and this <stdio.h> header file consists of some input output functions like printf(), scanf()
+ 			 we want to use this printf(), scanf() function in our program that's why we can define/declare <stdio.h> here
+			
+		      2. #include is a preprocessor directive that tells the c preprocessor to include the contents of header file in                          the current program
+
+
+
+*****  c preprocessor => is a program/software that preprocess our program/source code
+
+
+                     
+                     3. # => denotes the preprocessor directives in c programming
+                    
+
+
+   
+file format=>
+
+imah112333.jpeg =>image file
+
+pooja.txt   => text file
+data.doc   => document file
+
+sampleData.xls => excel file
+
+first.c  => c source file
+stdio.h  => header file
+
+
+G. Executing using IDE
+        - To download the Dev C++ IDE by clicking on the following link
+        
+     		https://sourceforge.net/projects/orwelldevcpp/
+        
+        - Inclusion of header files.
+         #include<stdio.h> 
+      
+         -c preprocessor is a prog.that processs our source code(program) before compilation
+           
+
+
+H. Header files
+
+    1.stdint.h =  defines exact width of integer type
+    
+    2.stdio.h = defines core input output related functions scanf(),printf()
+
+    3.stdlib.h = defines numeric conversion fun, memory allocation= malloc(),realloc(),calloc()
+
+
+number types
+0-9 => decimal number  0,1,2,3,4,5---9
+0-7  =>  octal         0,1,2,3------7
+0-15 => hexadecimal number  0,1,2,3---15
+0,1 => binary numbers
+
+ 
+   4.string.h = defines string handling fun like strlen(),strupr(),strlwr(),strrev(),strcpy(), strcat()   seven    mentor= string is nothing but collection of characters/sequence of characters/group of charcaters e.g "laptop"
+
+        
+
+   5.math.h= defines common mathematical function
+      sqrt(49)
+      pow(2,6)   //inbuilt/predefined => means it is already defined by the system
+
+
+     calculate() //userdefined => means it is defined by the user/programmer not by the system
+
+
+
+
+H. Internal working execution of program
+ 
+**pre-processor=> it preprocesss the data means it removes extra part from the program like it removes comments,blank lines and sapces 		  and generates expanded code as shown in fig
+   
+**compiler   => it converts high level language(english) into mahine level(0,1) means it converts that pre process code into assembly                 code(symbolic machine code) by finding errors in the program
+   
+**assembler   => which process assembly code and generates object code
+             source code has name first.c => object code has name first.obj   
+
+**linker =>    it links libraries included in our program with object file/code and it generates .exe file(executable)
+
+
+
+
+      
+
+
+
+
+         

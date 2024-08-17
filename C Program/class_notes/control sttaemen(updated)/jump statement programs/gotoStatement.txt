@@ -1,0 +1,24 @@
+//programm to show the use of jump statement goto
+
+#include<stdio.h>
+
+void main()
+{
+	
+       printf("\n hi ");    //hi you  
+            goto l1;          //as goto statement occures in the program the control jumps to the label specified in the  goto statement(i.e l1 here) the label name is userdefined itcn be any name
+            
+        printf("how are ");
+		  
+		 
+		 
+		 
+		 
+		  l1:printf("you?") ;  //as goto occures in the program the control jumps here at the label l1 and middle statements qre skipped here printf("how are "); statemnt 
+		  			//label name
+	}
+
+
+
+
+

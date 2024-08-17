@@ -1,0 +1,342 @@
+*Dynamic(runtime) memory allocation in C
+
+-The concept of dynamic memory allocation in c language enables the C programmer to allocate memory at runtime. 
+
+-C Dynamic Memory Allocation can be defined as a procedure in which the size of a data structure (like Array) is changed during the runtime.
+
+-Dynamic memory allocation in c language is possible by 4 functions of <stdlib.h> header file.
+
+malloc() => memory allocation
+calloc() => contiguous allocation 
+realloc()=> re-allocation
+free()    => free()
+
+
+* difference between static memory allocation and dynamic memory allocation.
+
+	static memory allocation							dynamic memory allocation
+
+1. memory is allocated at compile time. int a,b;				1. memory is allocated at run time.
+
+2. memory can't be increased while executing program.	   			2. memory can be increased while executing program.
+
+3. used in array.  a[3];						        3. used in linked list(arrayList).
+
+
+* Methods used for dynamic memory allocation.
+
+1. malloc()	allocates single block of requested memory.
+
+2. calloc()	allocates multiple block of requested memory.
+
+3. realloc()	reallocates the memory occupied by malloc() or calloc() functions.
+
+4. free()	frees the dynamically allocated memory.
+
+-Suppose,the length (size) of the array is 9. But what if there is a requirement to change this length (size).
+
+ For Example,
+-If there is a situation where only 5 elements are needed to be entered in this array.
+
+-In this case, the remaining 4 indices are just wasting memory in this array. So there is a requirement to lessen the length (size) of the array from 9 to 5.
+
+-Take another situation. In this, there is an array of 9 elements with all 9 indices filled. But there is a need to enter 3 more  elements in this array. 
+
+In this case 3 indices more are required. So the length (size) of the array needs to be changed from 9 to 12.
+This procedure is referred to as Dynamic Memory Allocation in C.
+
+Therefore, C Dynamic Memory Allocation can be defined as a procedure in which the size of a data structure (like Array) is changed during the runtime
+
+* C malloc() method
+
+“malloc” or “memory allocation” method in C is used to dynamically allocate a single large block of memory with the specified size.
+
+It returns a pointer of type void which can be cast into a pointer of any form. It initializes each block with default garbage value.
+
+Syntax:
+    
+ptr = (cast_type*) malloc(byte-size)
+
+If space is insufficient, allocation fails and returns a NULL pointer
+
+
+
+//PROGRAM
+
+//program to show dynamic memory allocation in C using malloc function
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *ptr;      //this pointer will hold the base address of the block created
+	
+	int n,i;
+	printf("Enter the no of elements of the arr : \n");
+	scanf("%d",&n);
+	
+	ptr = (int*)malloc(n * sizeof(int));	//Dynamically allocate memory using malloc()
+	
+	printf("\ninitial value of  malloc = %d",*ptr);
+	if(ptr == NULL)					//Check if the memory has been successfully allocated by malloc or not
+   {
+         printf("memory not allocated.\n");
+	     exit(0);
+	}
+	else
+	{
+		printf("\nMemory successfully allocated using malloc : %d\n",(sizeof(ptr)*n));   //Memory has been successfully allocated
+			printf("enter the elements which you want to store at the memory space created by malloc function.....\n");
+		for(i=0;i<n;i++)       /// Get the elements of the array
+		{
+		
+			scanf("%d",&ptr[i]);
+//			ptr[i]=i+1;			//1,2,3,4,5
+		}
+		
+		printf("The elements of the array are: ");
+                 for (i = 0; i < n; i++)
+		 {
+           		 printf("%d ", ptr[i]); //1,2,3,4,5
+                 }
+    }
+  
+    return 0;
+}
+/*
+Enter the no of elements of the arr :
+4
+
+initial value of  malloc = 10172136
+Memory successfully allocated using malloc.
+enter the elements which you want to store at the memory space created by malloc function.....
+3
+6
+7
+8
+The elements of the array are: 3 6 7 8	*/
+	     
+
+
+*C calloc() method
+
+-“calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. 
+
+-It initializes each block with a default value ‘0’.
+
+Syntax:
+ptr = (cast_type*) malloc(byte-size)
+
+ptr = (cast-type*)calloc(n, element-size);
+
+e.g
+ptr = (float*) calloc(25, sizeof(float));
+
+This statement allocates contiguous space in memory for 25 elements each with the size of the float.
+
+
+//PROGRAM
+//program to show dynamic memory allocation in C using calloc function
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *ptr;     //this pointer will hold the base address of the block created
+	
+	int n,i;
+    printf("Enter the no of elements of the arr : \n");
+	scanf("%d",&n);
+	
+	ptr = (int*)calloc(n, sizeof(int));	//Dynamically allocate memory using malloc()
+	printf("\nInitial value of calloc fun = %d",*ptr);
+	if(ptr == NULL)					//Check if the memory has been successfully allocated by malloc or not
+        {
+         printf("memory not allocated.\n");
+	     exit(0);
+	     }
+	     else
+		{
+			printf("\nMemory successfully allocated using calloc is : %d\n", (sizeof(ptr)*n);   //Memory has been successfully allocated
+		
+		    printf("enter the elements which you want to store at the memory space created by calloc function.....\n");
+			for(i=0;i<n;i++)       /// Get the elements of the array
+			{
+					scanf("%d",&ptr[i]);
+				//ptr[i]=i+1;			//1,2,3,4,5.....
+			}
+		
+			printf("\nThe elements of the array are: ");
+        	for (i = 0; i < n; ++i)
+		{
+                     printf("%d ", ptr[i]);  //1,2,3,4,5......
+        	}
+    }
+  
+    return 0;
+}
+/*
+Enter the no of elements of the arr :
+5
+
+Initial value of calloc fun = 0
+Memory successfully allocated using calloc.
+enter the elements which you want to store at the memory space created by calloc function.....
+4
+8
+9
+7
+6
+
+The elements of the array are: 4 8 9 7 6   */
+	
+	     
+
+
+*C free() method
+“free” method in C is used to dynamically de-allocate the memory. The memory allocated using functions malloc() and calloc() is not de-allocated on their own. Hence the free() method is used, whenever the dynamic memory allocation takes place. 
+
+It helps to reduce wastage of memory by freeing it.
+
+Syntax:
+
+      free(ptr);
+
+*C realloc() method
+“realloc” or “re-allocation” method in C is used to dynamically change the memory allocation of a previously allocated memory. In other words, if the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically re-allocate memory. 
+
+re-allocation of memory maintains the already present value and new blocks will be initialized with default garbage value.
+
+Syntax:
+
+     ptr = realloc(ptr, newSize);
+
+where ptr is reallocated with new size 'newSize'.
+
+
+//PROGRAM
+
+////program to show dynamic memory allocation in C using realloc  function.It also  shows the use of free()
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+	int *ptr1;      ///this ptr pointer hold the base address of the  block created
+	
+   int n,i,n1;  //no .of element
+	
+	printf("Enter the number of element : \n");
+	scanf("%d",&n);   //
+
+	
+   ptr1 = (int*)calloc(n, sizeof(int));			//sizeof operator/symbol is used o calculate size of data 
+	
+	   
+	if(ptr1 == NULL)
+	{
+		printf("\nMemory not allocated \n");
+          	exit(0);
+	}
+	
+	else
+	{
+		printf("\nMemory is successfully allocated using calloc() ..");
+		  printf("\nenter the elements which you want to store at the memory space created by calloc function.....\n");
+		for(i=0;i<n;i++)
+		{
+		     	scanf("%d",&ptr1[i]); //1,2,3,4,5.....  
+		}
+		
+		printf("\n\nThe ele of the array are : \n");
+		
+		for(i=0;i<n;i++)
+		{
+		    printf("%d ",ptr1[i]);   //1,2,3,4,4.......  
+		}
+		
+		printf("\n\n\nenter the no of ele to which you want to reallocate the m/m space using realloc..  :\n");
+		scanf("%d",&n);
+		
+		ptr1 = realloc(ptr1, n * sizeof(int));
+		
+		printf("memmory successfully reallocated using realloc : \n");
+		
+		 printf("\nenter the elements which you want to store at the memory space created by realloc function.....\n");
+		for(i=0;i<n;i++)
+		{
+		     	scanf("%d",&ptr1[i]);   //1,2,3,4,5....
+		
+	        }
+		printf("\n\nThe ele of the array are : \n");
+		
+		for(i=0;i<n;i++)
+		{
+		    printf("%d ",ptr1[i]);   //1,2,3,4,4.......  
+		}
+		
+		printf("\n\nallocated memory is free using free() function..");
+		free(ptr1);
+	}
+	
+	return 0;
+	
+}
+/*
+output:
+Enter the number of element :
+3
+
+Memory is successfully allocated using calloc() ..
+enter the elements which you want to store at the memory space created by calloc function.....
+4
+8
+9
+
+
+The ele of the array are :
+4 8 9
+
+enter the no of ele to which you want to reallocate the m/m space uing realloc..  :
+4
+memmory successfully reallocated using realloc :
+
+enter the elements which you want to store at the memory space created by realloc function.....
+
+48
+33
+5
+59
+
+
+The ele of the array are :
+48 33 5 59
+
+allocated memory is free using free() function.. */
+
+
+* difference between malloc() and calloc():
+
+
+		malloc()									calloc()
+
+1. Malloc() function will create a single block of 			  1.Calloc() function can assign multiple blocks of 
+memory of size specified by the user.					       memory for a variable.
+
+	
+2. Malloc function contains garbage value initially.		         2.The memory block allocated by a calloc function is always 									        initialized to zero.
+
+3. Number of arguments accpeted by malloc is 1.			           3.Number of argument is 2.
+
+4.calloc is slower than malloc. 	              			   4. Malloc is faster than calloc.
+(because calloc allocates memory for each block separately )                   because malloc allocates memory for all blocks									                     at once
+
+5. It is not secure as compare to calloc.	                           5.It is secure to use compared to malloc.
+
+6. Time efficiency is higher than calloc().			           6.Time efficiency is lower than malloc().
+
+
+7.It does not perform memory initiazation.           	                   7.It performs memory initialization.

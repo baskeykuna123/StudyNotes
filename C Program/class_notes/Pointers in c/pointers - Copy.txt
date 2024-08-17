@@ -1,0 +1,426 @@
+POINTERS
+
+-The pointer in C language is a variable which stores/holds the address of another variable.  float f;      ptr=&f;
+
+-This variable can be of type int, char, array, function, or any other pointer. 
+
+-The size of the pointer depends on the architecture. However, in 32-bit architecture the size of a pointer is 2 byte.
+
+E.G
+
+int no = 100;   
+
+int *p = &no; // Variable p of type pointer is pointing to the address of the variable n of type integer. 
+
+*Declaring a pointer
+
+-The pointer in c language can be declared using * (asterisk symbol). 
+
+-It is also known as indirection pointer used to dereference a pointer
+e.g
+
+int *a;	  //pointer to int  
+char *c;  	//pointer to char 
+float *f; 
+
+
+By the help of * (indirection operator), we can print the value of pointer variable p.
+
+
+
+//Program to show the use of derived datatype pointer
+
+#include<stdio.h>
+int main()
+{
+	int *ptr1;
+	int *ptr2;
+	int a=10,b=20;
+	  
+	ptr1=&a;
+	ptr2=&b;
+	  
+	printf("\nThe value of var a is = %d",*ptr1);     //display the value of variable a using pointer variable *ptr1
+    printf("\nThe value of var b is = %d",*ptr2);     //display the value of variable b using pointer variable *ptr2
+	  
+	printf("\nThe address of a = %d",ptr1);         //prints the address of a       
+    printf("\nThe address of b =%d",ptr2);	      //prints the address of b      
+	  
+	  
+	  return 0;
+	    
+}
+
+/*Expected output:
+
+The value of var a is = 10
+The value of var b is = 20
+The address of a = 6422164
+The address of b =6422160 */
+
+
+*********pointer to an array[3,45,5,6,3]
+
+-We can also point the whole array using pointers.
+
+-Using the array pointer, we can easily manipulate the multi-dimensional array.
+
+float fff=4.5;       float arr[4];
+float *p;              float *ptr[4];
+p=&fff                 ptr=&arr;
+
+
+
+Dereferencing the array pointer
+	
+Since ptr is an array pointer,
+
+*ptr will be again an address which is the address of the first element in the array.   //address
+
+
+
+//Program for pointer to an array(integer)
+#include<stdio.h>
+int main()
+{
+	int arr[10]={35,66,8,88,3};
+	int (*p)[10]=&arr;
+	
+	///p[]=&a;
+	
+	printf("adddress first ele of array  :%d\n",p);
+	printf("address of second ele of array : %d\n",*p+1); //address of first ele of array
+	printf("address of third ele of array : %d\n",*p+2);
+		
+	printf("%d\n",*arr);  //first value or ele of array
+
+    printf("%d\n",*(arr+1));  
+
+	printf("%d\n",*(arr+2));
+
+	printf("%d\n",*(arr+3));
+
+	
+	return 0;
+	
+}
+/*output
+adddress first ele of array  :6422132
+address of second ele of array : 6422136
+address of third ele of array : 6422140
+35
+66
+8
+88 */
+
+
+
+//Program for pointer to an array(character)
+#include<stdio.h>
+int main()
+{
+	char arr[10]={'h','e','l','l','o'};
+	char (*p)[10]=&arr;
+	
+	///p[]=&a;
+	
+	printf("adddress first ele of array  :%d\n",p);
+	printf("address of second ele of array : %d\n",*p+1); //address of first ele of array
+	printf("address of third ele of array : %d\n",*p+2);
+		
+	printf("%c\n",*arr);  //first value or ele of array
+
+    printf("%c\n",*(arr+1));  
+
+	printf("%c\n",*(arr+2));
+
+	printf("%c\n",*(arr+3));
+
+	
+	return 0;
+	
+}
+
+/*output
+adddress first ele of array  :6422162
+address of second ele of array : 6422163
+address of third ele of array : 6422164
+h
+e
+l
+l
+   */
+
+
+*Pointer Arithmetic in C
+
+-We can perform arithmetic operations on the pointers like addition, subtraction, etc.     444474488482 -1
+-However, the pointer contains the address, the result of an arithmetic operation performed on the pointer will also be a pointer if the other operand is of type integer. 
+-In pointer-from-pointer subtraction, the result will be an integer value
+
+Following arithmetic operations are possible on the pointer in C language
+
+Increment   
+Decrement   
+Addition      
+Subtraction
+
+
+*Incrementing Pointer in C
+
+-If we increment a pointer by 1, the pointer will start pointing to the immediate next location.   1002+1=1003
+-This is somewhat different from the general arithmetic since the value of the pointer will get increased by the size of the data type to which the pointer is pointing.
+
+The Rule to increment the pointer is :
+
+new_address= current_address + i * size_of(data type)  
+
+Where i is the number by which the pointer get increased.
+
+32-bit
+For 32-bit int variable, it will be incremented by 2 bytes.
+
+64-bit
+For 64-bit int variable, it will be incremented by 4 bytes.
+
+//pointer arithmetic(increment opreation) means incrementing pointer variable on 64 bit architecture
+
+#include<stdio.h>
+int main()
+{
+	int n=45;        //4 byte for 64   //new_address= current_address + i * size_of(data type)  
+																	//	=     6422168   + 2 *    4
+																	//  =     6422168   + 4 =6422172
+																	//new address = 6422172	
+	int *ptr;
+	 
+	ptr=&n;
+	
+
+	printf("address of p var is %d\n",ptr);
+	
+		ptr = ptr+1;    //i++  (i=i+1)
+		
+		printf("after incre : address of p var is %d\n",ptr);	
+		
+			ptr = ptr+1;    //i++  (i=i+1)
+		
+		printf("after incre : address of p var is %d\n",ptr);
+	
+}
+/*
+output:
+address of p var is 6422168
+after incre : address of p var is 6422172
+after incre : address of p var is 6422176  */
+
+
+
+
+*Decrementing Pointer in C
+
+Like increment, we can decrement a pointer variable. If we decrement a pointer, it will start pointing to the previous location.  10001-1=1000
+
+The Rule to decrement the pointer is :
+
+new_address= current_address - i * size_of(data type)  
+
+32-bit
+For 32-bit int variable, it will be decremented by 2 bytes.
+
+64-bit
+
+For 64-bit int variable, it will be decremented by 4 bytes
+
+
+
+//pointer arithmetic(decrement opreation) means decrementing pointer variable on 64 bit architecture
+
+#include<stdio.h>
+int main()
+{
+	int n=45;      //2byte for 32 bit  //4 byte for 64   //new_address= current_address- i * size_of(data type)  
+																	//	=6422168        -1 *      4
+																	//  =6422168 -4=6422164
+														  //new address= 6422164	
+	int *ptr;
+	 
+	ptr=&n;
+	      													
+    printf("address of p var is %d\n",ptr);                  //6422168
+	
+	ptr = ptr-1;    //i--  (i=i-1)
+		
+	printf("after decre : address of p avr is %d\n",ptr);	//after decre :  6422164
+	
+}
+/*
+output:
+	
+address of p var is 6422168
+after decre : address of p avr is 6422164 */
+
+
+
+
+****C Pointer Addition
+
+We can add a value to the pointer variable. The formula of adding value to pointer is given below:
+
+
+new_address= current_address + (num * size_of(data type)) 
+
+32-bit
+For 32-bit int variable, it will add 2  * number.
+
+64-bit
+For 64-bit int variable, it will add 4 * number.
+
+
+//pointer arithmetic(addition opreation) means it adds values to pointer variable on 64 bit architecture
+
+#include<stdio.h>
+int main()
+{
+	int nn=38;
+	
+	int *ptr;
+	
+	ptr=&nn;
+	 
+	 printf("address of variable is = %d",ptr);
+	 
+	 ptr=ptr+5;     //new_address= current_address + (num * size_of(data type)) 
+	                            //  =      6422168 +  (5  *  4);
+	         					//	=      6422168 +  20;
+	         					//new address=     6422188
+	 printf("\n\nafter add : the address is =  %d",ptr);
+	
+	 return 0;
+}
+/*
+output:
+address of variable is = 6422168
+
+after add : the address is =  6422188  */
+
+
+****C Pointer Subtraction
+
+Like pointer addition, we can subtract a value from the pointer variable. Subtracting any number from a pointer will give an address. The formula of subtracting value from the pointer variable is given below:
+
+new_address= current_address - (number * size_of(data type))  
+
+32-bit
+For 32-bit int variable, it will subtract 2 * number.
+
+64-bit
+For 64-bit int variable, it will subtract 4 * number. 
+
+//pointer arithmetic(subtraction opreation) means it subtract values from pointer variable on 64 bit architecture
+
+#include<stdio.h>
+int main()
+{
+	int nn=38;
+	
+	int *ptr;
+	
+	ptr=&nn;
+	 
+	 printf("address of var is = %d",ptr);
+	 //ptr=ptr-number
+	 ptr=ptr-2;     //new_address= current_address - (num * size_of(data type)) 
+	                            //  =  6422168- 2*4;
+	         					//	= 6422168 -8;
+	         					//	= 6422160
+	 printf("\n\nafter sub : the address is =  %d",ptr);
+	
+	 return 0;
+}
+
+
+/*
+output
+
+address of varis = 6422168
+
+after sub : the address is =  6422160  */
+
+
+* void pointer in C
+Till now, we have studied that the address assigned to a pointer should be of the same type as specified in the pointer declaration. 
+
+For example, if we declare the int pointer, then this int pointer cannot point to the float variable or some other type of variable, i.e., it can point to only int type variable. 
+
+To overcome this problem, we use a pointer to void. A pointer to void means a generic pointer that can point to any data type.
+
+We can assign the address of any data type to the void pointer, and a void pointer can be assigned to any type of the pointer without performing any explicit typecasting.
+
+float a=10;
+float *ptr1;
+ptr=&a;
+
+
+int b=30.0;
+int *ptr2;
+ptr=&b;
+
+
+char c;
+char *ptr3;
+ptr=&c
+
+
+void *ptr
+
+ptr=&c;
+ptr=&a;
+ptr=&b;
+
+SYNTAX
+void *pointer name;  
+
+E.G void *ptr;  
+
+here,the void is the type of the pointer, and 'ptr' is the name of the pointer.
+
+The void pointer in C is a pointer which is not associated with any data types. 
+
+It points to some data location in the storage means points to the address of variables. 
+
+It is also called general purpose pointer. In C, malloc() and calloc() functions return void * or generic pointers.
+
+
+//program to declare void pointer(void ointer can hold address of any types of value)
+#include<stdio.h>
+int main()
+{
+          int n=30;       //int var decalration
+		  float m=5.6;    //float var declaration
+		  char ch='u';
+		  
+		  void *ptr;       //void pointer declaration
+		  
+		  	ptr=&n;
+		  	printf("\nvalue integer variable is = %d",*((int*)ptr));
+          //  printf("\naddress of int variable is = %d",((int*)ptr));		  	
+		  	
+		  	ptr=&m;
+		  	printf("\nvalue float variable is = %f",*((float*)ptr));
+		  //	printf("\naddress of float variable is = %d",((float*)ptr));
+		  	
+		  	ptr=&ch;
+	        printf("\n\nvalue character var is = %c",*((char*)ptr));
+	       // printf("\n\naddress character var is = %d",((char*)ptr));
+}
+/*
+output:
+	
+integer variable is = 30
+
+float variable is = 5.600000
+
+character var is = u    */
+
+

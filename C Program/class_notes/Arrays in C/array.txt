@@ -1,0 +1,189 @@
+      ARRAYS
+
+*need for array?
+if we want to stores multiple var or we want to access the values of that multiple var then we have to first declare that multiple var one by one then we have assign values to them one by one then we have to access that variables value separately, which causes the wastage of memory and the performance of the program is going to be down
+so to avoid these wastage of m/m we can store all these similar types of data/values inside one big var called as array
+
+*what is array?
+-Array is the collection of similar/homogeneous types of elements/data which is store in contiguous m/m location
+
+-Arrays are the derived datatype in C. which can stores the primitive types of data such int,float,char etc
+
+-Each member/elements of can be randomly accessed by using index no and array index always starts from 0th position
+
+-Arrays elemnts are always accessed by the index no not by the actual elements
+
+- c arrays are beneficial if you want to store the same type of elements
+
+*Advantage
+1.code optimization
+2.ease for traversing(to visit the each and every element of array)
+3.random access 
+4.ease of sorting
+
+
+1. one dimensional array(1D array)
+we can specify array elements/values within one single line and that array consists of only one subscripts notation that why we called this array as 1D array
+
+
+SYNTAX:
+
+datatype array_name[array_size];   //array declaration//size is nothing but the no of elemnets of array
+
+[] these open close square brackets are called as subscripts notation
+e.g int a[4];
+
+=> array declaration
+e.g int a[4];
+
+
+=>array initialization
+
+arrayname[index_no]=value;
+a[0]=12;
+a[1]=13;
+a[2]=14;
+a[3]=67;
+
+
+//PROGRAM for one dimensional array
+#include<stdio.h>
+main()
+{
+
+    int size;
+    int a[size],i;
+
+    printf("Enter the size of arr : ");
+    scanf("%d",&size);
+    
+    printf("Enter the elements of arr : ");
+    
+    for(i=0;i<size;i++)
+    {
+       scanf("%d",&a[i]);
+    }
+    
+    printf(" the elements of arr are :\n ");
+   for(i=0;i<size;i++)
+    {
+       printf("%d\n",a[i]);
+   }
+}
+/*Enter the size of arr : 5
+Enter the elements of arr : 11
+12
+13
+14
+15
+
+the elements of arr are :
+11
+12
+13
+14
+15
+
+
+
+2. Two dimensional array(2D array)
+-array of arrays
+-we can specify array elements/values in the form row and columns and that array consists 2 subscripts notation that why we called this array as 2D array
+-the 2D array can be represented/organized as matrices which can be represented as the collecton of rows and col
+
+=>declaration:
+             
+datatype arr_name[no of nows][no of columns];
+
+E.g
+int arr[2][3]={
+               {23,4,5},
+               {8,6,7}
+              };
+
+
+
+//PROGRAM for two dimensional array
+
+#include<stdio.h>
+main()
+{
+    int i,j;    //0 1  2 3  4   5  6
+	int sub[4][3]={
+	               {54,6,67},
+	               {7,8,94},
+	               {6,8,3},
+	               {6,9,3}
+				};
+				 
+	printf("\n\nelements of 2D array are :\n");
+	 for(i=0;i<4;i++) //rows
+	 {
+	 	for(j=0;j<3;j++)
+	         {
+		   printf("%d ",sub[i][j]); //45 67 78 
+      	         }
+          	printf("\n");
+	  }
+}
+/*output
+
+elements of 2D array are :
+54 6 67
+7 8 94
+6 8 3
+6 9 3 */
+
+
+//Program to display character type of array
+
+#include<stdio.h>
+main()
+{
+    int i,j,rows=3;;    //0 1  2 3  4   5  6
+	char sub[4][3]={
+	               {'c','a','p'},
+	               {'b','a','g'},
+	               {'r','u','n'},
+	               {'p','e','n'}
+				};
+				 
+	printf("\n\nelements of 2D array are :\n");
+	 for(i=0;i<4;i++) //rows
+	 {
+	 	for(j=0;j<3;j++)
+	         {
+		   printf("%c ",sub[i][j]); //45 67 78 
+      	         }
+          	printf("\n");
+	  }
+}
+
+
+* Array in function(passing array to the function)
+
+just like variables, array can also be passed to function as an argument
+
+
+//passing array to the function OR array in function
+
+#include<stdio.h>
+
+void displayArray(char a)
+{
+	 printf("\n%c",a);  //12  14
+}
+main()
+{    
+int i;      //0   1   2   3   4
+ char arr[]={'p','o','o','j','a'};
+	
+	printf("Array ele are : \n");
+	
+	for(i=0;i<5;i++)
+	{
+	   displayArray(arr[i]);
+    }
+}
+
+

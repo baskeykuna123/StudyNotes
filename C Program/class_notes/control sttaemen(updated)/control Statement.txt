@@ -1,0 +1,577 @@
+CONTROL FLOW STATEMENT
+ 
+The statements inside your source file(program) are generally executed from top to bottom. 
+
+Control statements enable us to specify the flow of program control; ie, the order in which the instructions in a program must be executed. 
+
+They make it possible to make decisions, to perform tasks repeatedly or to jump from one section of code to another.
+
+There are four types of control statements in C:
+
+1.Decision making statements
+2.Selection statements
+3.Iteration/Looping statements
+4.Jump/Transfer statements
+ 
+
+1.Decision making statement/line
+      i. if statement
+      ii. if-else statement
+      iii.else- if ladder
+      iv. nested if 
+
+      i)if statement
+         -it is simplest form of decision making statement
+         -if takes condition in paranthesis () and an statement or block of statements. 
+         if condtion specified in if block is true then that block of state are executed else the statements are skipped
+ SYNTAX: 
+          if(condition/expresssion)       //if cond is true the if block executes.
+          {
+              block of statements
+           }
+
+    The disadvantage of if statement is that if the condition in if statement is false/wrong then we got nothing on the console as an output
+   
+    To overcome this disadvantage of if we can use else statement with if
+   
+ //program to show the use of single if statement(find the greater num between 2 numbers )
+
+#include<stdio.h>  
+int main()
+{
+	int x=60,y=100;
+	
+	
+	if(x>y)       //if cond is true the if block executes. if the condition is false we get nothing in the output. that is the disadvantage of if
+        {
+        printf("x is greater ");
+	}
+ }
+
+/*
+output :
+             //here we get nothing in the output because, condition in the if statement is false so if block is not executes.
+
+
+*/       
+
+       ii) if-else
+               if condition is true the if statement gets execute otherwise(if condition is false) else statement gets executes.
+    		we can't executes both if & else block at the same time
+
+    SYNTAX: 
+          if(condition/expresssion)       //if cond is true the if block executes.
+          {
+              block of statements;
+           }
+            else                // the condition in if block is false then else part gets execute
+            {
+                block of statement;
+           }
+
+
+
+
+//program to show the use of if else statement(check whether the no is even or odd )
+
+#include<stdio.h>  
+int main()
+
+{                           			        
+	int x; 
+	
+	printf("\n enter the number....");  //59
+         scanf("%d",&x);                                        
+	
+	         
+         if(x%2==0)      //if cond is true the if block executes.
+         {
+             printf("even number");
+        }
+        else            // the condition in if block is false then else part gets execute
+        {
+            printf("odd number ");
+        }
+	 
+	 //printf("\nbye");
+	 
+}
+
+/*
+output:
+
+enter the number.... 59
+odd number    */ 
+
+
+
+
+
+
+
+iii) else if ladder
+     -We can check multipl condition with the help of else if ladder
+        if cond1 is true then the block of that particular cond is executed. if cond1 false then it checks for next cond2. if the next cond2 is true then the block asscociated with that cond2 gets executes otherwise it checks for the next cond3. likewise it checksall cond. if all the cond is false then it executes else part of the statements.
+   
+
+ SYNTAX:
+             if(cond1)
+             {
+     		BLOCK of code
+	     }
+            
+          else if(cond2)
+          {
+  		block of code
+          } 
+	
+          else if(cond 3)
+          {
+                block of code
+	  } 
+         
+          else if(cond4)
+          {
+  		block of code
+          } 	
+            
+          else if(cond 5)
+          {
+                block of code
+	   }
+              .
+	      .
+	      .
+              .
+            else()
+            { 
+             block of code
+             }
+
+//program for grading system for fail,D grade,c grade,B grade, A grade, A+ using else if ladder statement
+
+#include<stdio.h>
+int main()
+{
+	
+	   int marks;
+	   
+	   printf("enter the marks : ");
+	   scanf("%d",&marks);    
+	   
+	   if(marks<50)    //cond1 : if this condition is true then printf("fail..") is  executed. but if condition1 is false then control checks the next condition
+       {
+     	  printf("fail.."); 	//   < 49
+	   }
+	   
+	   else if(marks>=50  && marks<60)    //cond2      50-59  
+        {
+  		    printf("D grade");
+        } 
+	
+        else if(marks>=60 && marks<70)       //cond3   60-69 
+        {
+               printf("c grade");
+	    } 
+         
+        else if(marks>=70 && marks<80)       // cond4     70-79
+        {
+  		       printf("B grade");
+  		       
+        } 	
+            
+        else if(marks>=80 && marks<90)       //cond5   80-89
+        {
+                printf("A grade");
+	    }
+      else if(marks>=90 && marks<=100)									//90-99
+      { 
+             printf(" A+ grade");
+      }
+       
+     else				//if all the above conditionsare false then this else block gets execute
+	 {
+	 	printf("invalid..");
+   }      
+        return 0;
+      
+}
+/*
+output:
+
+enter the marks : 68
+c grade   */
+
+/*
+enter the marks : 120
+invalid..     */
+
+
+
+
+iv)nested if
+       
+   SYNTAX:
+   
+       if(cond1)   //if it is true then it goes inside the block, but cond1 false then it executes its respective else part
+       {  
+           if(cond2)          //if the cond2 is true then it executes block,but if the cond2 is false then it executes its respective else part
+           {
+               block of code ;    
+           }
+    	   else
+           {
+               block of code;
+           } 
+        
+       }
+      else
+      {
+           if(cond3)        //if cond3 is true the it executes its respective block but if cond3 is false  then its respective else block gets executes
+           {
+ 		block of code
+           }
+ 	   else
+           {
+            block of code
+           }
+      
+     }
+      
+  
+
+//program to show the use of nested if.(find the greatest among 3 numbers)
+#include<stdio.h>
+int main()
+{
+	int n1=8,n2=23,n3=1000;
+	
+	//n1>n2,n1>n3,n2>n3 
+	
+	if(n1>=n2)   //if it is true then it goes inside the block, but cond1 false then it executes its respective   part
+       {  
+           if(n1>=n3)          //if the cond2 is true then it executes block,but if the cond2 is false then it executes its respective else part
+           {
+               printf("n1 is greater..");    
+           }
+    	   else
+           {
+               printf("n3 is greater");
+           } 
+        
+    }
+    else
+      {
+           if(n2>=n3)        //if cond3 is true the it executes its respective block but if cond3 is false  then its respective else block gets executes
+           {
+ 		printf("n2 is greater..");
+           }
+ 	    else
+           {
+            printf("n3 is greater");
+           }
+      
+     }
+      
+}
+/* 
+output:
+
+n3 is greater   */
+
+
+
+           
+  
+  2. Selection statement
+      
+     i. switch case
+              A switch case is used for multiple way selections that will divided into different code segment/block of code based on 
+value of the variable or expression
+
+
+Switch case is used to check range of values for the variables
+
+
+SYNTAX:
+       switch(expression/variable/choice)
+        {
+           case value1:
+                   block of code/code segment;
+    		   break;
+           
+   	  case value2:
+                   block of code;
+		   break;
+      
+	  case value3:
+                   block of code;
+                   break;
+              .
+	      .
+	      .
+	      .
+        
+          default:
+                 default block of code;
+        }
+
+
+
+//program to show the use of  switch case statement(find whether the character entered by the user is vowel or consonent )
+
+//A to Z
+//vowels=> a,e,i,o,u =5
+//consonent   21
+
+#include<stdio.h>  
+int main()
+{
+	char ch;
+	
+    printf("Enter the char :  ");  ///b
+    scanf("%c",&ch);
+    
+    switch(ch)                 //choice or variable enter by the user
+    {
+    	case 'a': 									//a,e,i,o,u are the vowels 
+    		printf("%c is vowel ",ch);
+    	    break;
+    	
+    	case 'e':
+    		printf("%c is vowel",ch);
+    		break;
+    		
+    		
+    	case 'i':
+    		printf("%c is vowel",ch);
+    	    break;
+    	
+    	case 'o':
+    		printf("%c is vowel",ch);
+    	    break;
+    	    
+    	case 'u':
+    		printf("%c is vowel",ch);
+    	    break;
+    	    
+    	 default:                               //if above cases are not match with the character entered by the user then this default block will be executes
+		 printf("%c is consonet",ch);  
+    	    
+    	    
+    	    
+	}
+}
+*/ output:
+
+Enter the char :  u
+u is vowel
+
+Enter the char :  y
+y is consonet
+
+
+
+ 3. iteration/repetition/looping statement
+
+    Iteration statemens creates loops in the program. In otherwords, it repeats the set of statements until the condition for teminations is met. 
+
+ printf("hello"); 
+
+
+
+i) while loop
+the while loop in c is the most fundamental/basic loop stat. it repeats a state/set of state until its controlling exp/condition is true
+
+it is also called as entry level controlled statement. because it checks the condition at the begining or starting of the loop.
+
+
+SYNTAX:
+         initialization;
+           while(condition)
+          {
+                    //block of code/statements;
+                    increment/decrement;
+          }
+
+
+ 
+ii) do-while loop
+-it is also called as exit level controlled statement. because it checks the condition at the end of the loop.
+-do while loop always executes its body at least once, because conditional exp is at the bottom of the loop
+
+   SYNTAX:
+           initialization;
+           do   
+           {
+                    //block of code;
+  		    //incre/decre;
+  
+           }while(condition);
+
+
+iii) for loop
+A for loop is repition state/control structure which allows us to write a loop that executed specific no.times. 
+
+The loop enables us to perform 'n' number of steps together in one single line
+
+SYNTAX:
+
+          for(initialization;condtion;incre/decre)
+          {
+		//block of code
+          }
+
+ 
+4. jump statement/transfer 
+c prog allows us jumping from one statement to another.
+
+      i) break
+      - it is a keyword whivh is used to terminate the loop or exit from the block
+      - the control jumps to next statement after loop or block.
+      - break is used with for,while,do while and switch case statement.
+SYNTAX:
+
+        for(initialization;condtion;incre/decre)
+         {
+		break;
+         }
+
+
+switch(var)
+{
+  case 1:
+         printf();
+        break;
+
+
+}
+
+
+//programm to show the use of jump statement break
+
+#include<stdio.h>
+main()
+{
+	int i;
+	for(i=0;i<=10;i++)
+	{
+		if(i==5)
+		    break;         //as i has value 5 this loop gets terminate because the cobndition gets satisfy and control jump out of this if statement
+		    
+		printf("\n%d",i);
+		
+	}
+}
+/*
+output:
+0
+1
+2
+3
+4        //as i==5 the loop gets break   */
+
+
+
+ii)continue
+   -continue statement is used inside loops. when continue statement is encountered inside  a loop control jumps at the beginning of the loop for the next iteration,skipping the execution of statement inside the body of the loop for the current iteration
+  - continue is used with for,while,do while 
+
+SYNTAX:
+
+        for(initialization;condtion;incre/decre)
+          {
+		continue;
+    
+         }
+
+
+////programm to show the use of jump statement continue
+
+#include<stdio.h>
+main()
+{
+	int i;
+	for(i=0;i<=10;i++)
+	{
+		if(i==5)         		//as i==5 control jumps at the beginning of the loop for the next iteration by skipping the current iteration
+		    continue;
+		    
+		printf("\n%d",i);
+		
+	}
+}
+/*
+output:
+0
+1
+2
+3
+4  
+6      //as i==5 condition gets true, the control skips the current iteration an jump at the beginning of the loop..hence 5 is not printed in the output
+7
+8
+9
+10
+*/
+     
+
+ iii)return
+        it is used with fun to terminates the execution of funcion & returns the control of calling function
+ 
+SYNTAX:
+         return_type fun_name()
+        {
+		return value;
+
+       }
+ 
+     
+
+
+ iv) goto
+           It is used to transfer the program control at specific statement called label.
+
+          goto label_name;
+
+  //program to print the table of number given by the user using goto statement
+#include<stdio.h>
+int main()
+{
+	int num,i=1;
+	
+	printf("\nEnter the numbr whose table you want to print : ");
+	scanf("%d",&num);
+	
+	
+	table:						//label name
+			printf("%d * %d = %d\n",num,i,num*i);
+			i++;
+			if(i<=10)
+			    goto table;    //whenever i is less than 10 control jumps to table label
+}
+/*
+output:
+
+Enter the numbrwhose table you want to print : 7
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70  */    
+
+
+
+
+
+
+        
+         
+      
+
+

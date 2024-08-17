@@ -1,0 +1,390 @@
+
+
+1. half pyramid
+*
+**
+***
+****
+*****
+
+#include<stdio.h>
+main()
+{
+	int i,j;
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=i;j++)  //j=columns
+  {
+      printf("*");
+    }
+    printf("\n");
+   
+}
+
+2. inverted half pyramid
+*****
+****
+***
+**
+*
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=5;j>=i;j--)  //j=columns
+   {
+      printf("* ");
+    }
+    
+    
+   printf("\n");
+}
+}
+
+
+3. right half pyramid
+
+       *
+      **
+     ***
+    ****
+   *****
+  ******
+//right  half pyramid
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=8;i++)   //i=rows
+{
+   for(j=1;j<=8;j++)  //j=columns
+	{
+		if((i+j)<=8)
+            printf(" ");
+        else 
+            printf("*");
+    }
+  printf("\n");
+}
+}
+
+4. inverted right half
+       
+*****
+ ****
+  ***
+   **
+    *
+//inverted right half
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=5;j++)  //j=columns
+   {
+       if((i+j)<(2*i))
+            printf(" ");
+        else 
+            printf("*");
+    }
+    printf("\n");
+}
+}
+
+
+5. Full pyramid
+       *
+      * *
+     * * *
+    * * * *
+   * * * * *
+  * * * * * *
+ * * * * * * *
+* * * * * * * *
+
+//full pyramid
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	//printf("Enter the no of rows");
+      //scanf("%d",&row);
+ 
+for(i=1;i<=8;i++)   //i=rows
+{
+   for(j=1;j<=8;j++)  //j=columns
+    {
+	if((i+j)<=8)
+            printf(" ");
+        else 
+            printf("* ");
+    }
+    printf("\n");
+}
+}
+
+
+6.inverted  Full pyramid
+
+* * * * * * * *
+ * * * * * * *
+  * * * * * *
+   * * * * *
+    * * * *
+     * * *
+      * *
+       *
+
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	//printf("Enter the no of rows");
+   //scanf("%d",&row);
+ 
+for(i=1;i<=8;i++)   //i=rows
+{
+   for(j=1;j<=8;j++)  //j=columns
+	{
+		
+		if((i+j)<(2*i)) //true
+		{
+		    printf(" ");
+     	}
+     	else   //false
+     	{
+     		printf("* ");
+		 }
+	
+    }
+      printf("\n");
+}
+}
+
+7. number pattern 
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+
+#include<stdio.h>
+main()
+{
+	int i,j,row,num=1;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=i;j++)  //j=columns
+	{
+      printf("%d ",i);
+    }
+    
+    
+   printf("\n");
+}
+}
+
+8) num pattern
+
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+//inverted half pyramids
+#include<stdio.h>
+main()
+{
+	int i,j,row,num=1;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=i;j++)  //j=columns
+	{
+      printf("%d ",j);
+    }
+    printf("\n");
+}
+}
+
+9)
+
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+//inverted half pyramids
+#include<stdio.h>
+main()
+{
+	int i,j,row,num=1;
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=i;j++)  //j=columns
+	{
+      printf("%d ",num);
+      num++;
+    }
+    printf("\n");
+}
+}
+
+11) char pattern half pyramid
+
+A
+B C
+D E F
+G H I J
+K L M N O
+
+//inverted half pyramids
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	char ch='A';
+	//printf("Enter the no of rows");
+//	scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=i;j++)  //j=columns
+	{
+      printf("%c ",ch);
+      ch++;
+    }
+    printf("\n");
+}
+}
+
+12)
+A
+B B
+C C C
+D D D D
+E E E E E
+F F F F F F
+
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	char alpha='A',last;
+	printf("Enter the last char of pyramid");
+        scanf("%c",&last);
+ 
+       for(i=1;i<=(last - 'A'+1);i++)   //i=rows
+       {
+         for(j=1;j<=i;j++)  //j=columns
+         {
+            printf("%c ",alpha);
+      
+         }
+     alpha++;
+    printf("\n");
+}
+}
+
+
+
+12) char pattern inverted full pyramid
+
+A B C D E
+ F G H I
+  J K L
+   M N
+    O
+
+#include<stdio.h>
+main()
+{
+	int i,j,row;
+	char ch='A';
+	//printf("Enter the no of rows");
+   //scanf("%d",&row);
+ 
+for(i=1;i<=5;i++)   //i=rows
+{
+   for(j=1;j<=5;j++)  //j=columns
+	{
+		
+		if((i+j)<(2*i)) //true
+		{
+		    printf(" ");
+     	}
+     	else   //false
+     	{
+     		printf("%c ",ch);
+     		ch++;
+		 }
+	
+    }
+
+
+
+
+
+/*
+*
+* *
+* * *
+* * * *
+* * * * *
+*/
+
+13. 
+2
+4 6
+8 10 12
+14 16 18 20
+22 24 26 28 30
+
+--------------------
+
+//half pyramid
+#include<stdio.h>
+main()
+{
+	int i,j,num=2;
+	
+	//printf("Enter the number of rows : ");
+	//scanf("%d",&row);
+	
+	for(i=1;i<=5;i++)
+	{
+		for(j=1;j<=i;j++)
+		{
+			
+			printf("%d ",num);
+			num=num+2;
+			
+		}
+		
+		printf("\n");
+	}
+}

@@ -1,0 +1,13 @@
+Node controller: responsible for noticing and responding when nodes goes down.
+replication controller: maintain the number of pods. It control how many identical copies of a pod should be running somewhere 
+on the cluster.
+End point controller: joins services and pods together.
+service account and token controller: handles access management.
+replicast controller: ensure number of replication of pods running at all time.
+deployment controller: provide declarative update for pod and replicasts.
+daemonset controller: all nodes run a copy of specific pods.
+job controller: supervisor process for pods carying out jobs.
+services allow communication
+
+https://www.learnitguide.net/2018/08/install-and-configure-kubernetes-cluster.html
+https://www.youtube.com/watch?v=tbocjZHw0I8&list=PLYliwzTugkt3_8H2JPTUfzQ6NpsEzF41K&index=2

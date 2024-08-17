@@ -1,0 +1,58 @@
+//program for grading system for fail,D grade,c grade,B grade, A grade, A+ using else if ladder statement
+
+#include<stdio.h>
+int main()
+{
+	
+	   int marks;
+	   
+	   printf("enter the marks : ");
+	   scanf("%d",&marks);    
+	   
+	   if(marks<50)    //cond1 : if this condition is true then printf("fail..") is  executed. but if condition1 is false then control checks the next condition
+       {
+     	  printf("fail.."); 	//   < 49
+	   }
+	   
+	   else if(marks>=50  && marks<60)    //cond2      50-59  
+        {
+  		    printf("D grade");
+        } 
+	
+        else if(marks>=60 && marks<70)       //cond3   60-69 
+        {
+               printf("c grade");
+	    } 
+         
+        else if(marks>=70 && marks<80)       // cond4     70-79
+        {
+  		       printf("B grade");
+  		       
+        } 	
+            
+        else if(marks>=80 && marks<90)       //cond5   80-89
+        {
+                printf("A grade");
+	    }
+      else if(marks>=90 && marks<=100)									//90-99
+      { 
+             printf(" A+ grade");
+      }
+       
+     else				//if all the above conditionsare false then this else block gets execute
+	 {
+	 	printf("invalid..");
+   }      
+        return 0;
+      
+}
+/*
+output:
+
+enter the marks : 68
+c grade   */
+
+/*
+enter the marks : 120
+invalid..     */
+

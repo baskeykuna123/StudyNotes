@@ -1,0 +1,43 @@
+//program using do-while(print the series between 0-20)
+
+#include<stdio.h>
+int main()
+{
+	int i=0;           // initializtion      
+	
+	do   							//this do  loop executes at least once, even if the condition in while is false
+    	{
+             printf("\n%d",i);   //1,2,3,4,......19,20
+  	     i++; 					//increment /decrement
+  
+       }while(i<=20);  //   condition
+
+	
+	
+}
+
+/*
+output:
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+*/

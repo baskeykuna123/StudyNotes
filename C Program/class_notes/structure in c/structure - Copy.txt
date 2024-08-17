@@ -1,0 +1,450 @@
+	
+A. Overview of Structures
+
+*Why use structure?
+In C, there are cases where we need to store multiple attributes/variables of an entity.
+
+ It is not necessary that an entity/var has all the information of one type only.
+
+ It can have different attributes/var of different data types. 
+
+For example, an entity Student may have its name (string), int roll number[10] , int marks[10],char address[]. 
+
+To store such type of information regarding an entity student, we have the following approaches:
+
+1.Construct individual arrays for storing names, roll numbers, and marks.
+
+2.Use a special data structure to store the collection of different data types(structure).
+
+
+
+*What is Structure?
+
+Structure in c is a user-defined data type that enables us to store the collection of different data types.
+
+Each element of a structure is called a member/attributes/variables
+
+The ,struct keyword is used to define the structure. Let's see the syntax to define the structure in c.
+
+SYNTAX:
+
+struct structure_name   
+{  
+    data_type member1;   
+    data_type member2;  
+    .  
+    .  
+    data_type memeberN;  
+};  
+
+struct employee  
+{   int id;  
+    char name[20];  
+    float salary;  
+};  
+
+
+*Declaring structure variable
+
+We can declare a variable for the structure so that we can access the member of the structure easily. There are two ways to declare structure variable:
+
+1.By struct keyword within main() function
+2.By declaring a variable at the time of defining the structure.
+
+*1st way:
+ declare the structure variable by struct keyword. It should be declared within the main function.
+
+e.g
+struct employee  
+{   int id;  
+    char name[50];  
+    float salary;  
+};  
+Now write given code inside the main() function.
+
+int main()
+{
+struct employee e1, e2,e3.......e10;  
+}
+
+-The variables e1 and e2 can be used to access the values stored in the structure. 
+-Here, e1 and e2 can be treated in the same way as the objects in C++ and Java.
+
+
+*2nd way:
+
+Let's see another way to declare variable at the time of defining the structure.
+e.g 1)
+
+struct employee  
+{   int id;  
+    char name[50];  
+    float salary;  
+}e1,e2; 
+
+
+
+
+//program to define structure for 2 books
+
+//Pr
+#include<stdio.h>
+#include<string.h>
+struct Book
+{
+     int bid;  //members of structure
+	 double price;
+	 char bname[10];
+	 char t;	
+}cp,java;
+
+main()
+{
+//	struct Book cp,java;
+	
+	printf("Enter the data of book that is book name,book id,book price,  respectively ");
+	scanf("%[^\n]",&cp.bname);
+	scanf("%d",&cp.bid);
+	scanf("%lf",&cp.price);//let us c
+	                    
+	  // ^ caret
+	
+	printf("\n\nthe details of cp book is given below : ");
+	printf("\nbook id is : %d",cp.bid);
+	printf("\nbook price is : %lf",cp.price);
+	printf("\nbook name is : %s",cp.bname);
+	
+    printf("\n\nEnter the data of book that is book name,book id,book price,  respectively ");
+	scanf("%c",&java.t);  //after  entering integer value,compiler reads enter as a next input, so                              //it will not able to take another input data after int type of i/p, so                              //here will need to store that enter i/p in another temp var i.e t here
+	scanf("%[^\n]",&java.bname);
+	scanf("%d",&java.bid); //12 
+	scanf("%lf",&java.price);
+	
+	printf("\n\nthe details of java book is given below : ");
+	printf("\nbook id is : %d",java.bid);
+	printf("\nbook price is : %lf",java.price);
+	printf("\nbook name is : %s",java.bname);
+	
+	
+	
+}
+/*
+output:
+	
+info for 1st book..
+
+book no : 10000022
+book price : 200.570007
+book name : let us c
+
+
+
+info for 2nd book..
+
+book no : 103
+book price : 500.570007
+book name : c concepts   */
+
+
+
+
+*structure within structure/nested structure in c
+
+-C provides us the feature of nesting one structure within another structure by using which, complex data types are created.
+
+-For example, we may need to store the address of an entity student in a structure.
+
+-The attribute address may also have the subparts as street number, city, state, and pin code.
+ 
+-Hence, to store the address of the student, we need to store the address of the student into a separate structure and nest the structure address into the structure student.
+
+
+The structure can be nested in the following ways.
+
+1.By separate structure
+
+Here, we create two structures, but the dependent structure should be used inside the main structure as a member.
+
+
+
+//PROGRAM
+
+//program to define nested structure(we create two structures, but the dependent structure should be used inside the main structure as a member.)
+#include<stdio.h>
+#include<string.h>
+struct Address     //dependent structure=> depends upon struture Person
+{
+   char city[45];
+   int pin;
+   char phone[20];
+};
+struct Person   		//main structure
+{
+    int con_no;
+    char name[20];
+     
+	 struct Address a1;  //structure variable of Address
+} ;     
+
+void main()
+{
+	struct Person p1;    //structure variable of Address
+	
+	printf("\n*Enter the person info like contact number,name,city,pin,phone\n\n");
+	scanf("%d\n  %s\n %s\n  %d\n  %s",&p1.con_no,&p1.name,&p1.a1.city,&p1.a1.pin,&p1.a1.phone);
+	
+	printf("\n*Person information is...\n\n");
+	
+	printf("con no= %d \nperson name = %s \ncity = %s  \npin = %d \nphone = %s ",p1.con_no, p1.name, p1.a1.city,	p1.a1.pin, p1.a1.phone);
+	
+    
+}
+/*
+output:
+*Enter the person info like contact number,name,city,pin,phone
+
+786252525
+raj
+pune
+489763
+987636333
+
+*Person information is...
+
+con no= 786252525
+person name = raj
+city = pune
+pin = 489763
+phone = 987636333
+   */
+
+2.By Embedded structure
+
+The embedded structure enables us to declare the structure inside the structure. Hence, it requires less line of codes but it can not be used in multiple data structures.
+e.g
+struct Stud
+{
+     int rno;
+     char nm[50];
+
+     struct address
+     {
+	char city[56];
+	int pin;
+	char phone[67];
+     }add;
+}s;
+
+
+
+//PROGRAM
+
+//program to define nested structure i.e embedded structure(declare the structure inside the structure)
+#include<stdio.h>
+#include<string.h>
+struct Person   
+{
+    int con_no;
+    char name[20];
+     
+	 struct Address     //structure Address is nested/embedded inside outer structure Person
+	 {
+	 	char city[45];
+        int pin;
+       char phone[20];
+	 }a1;					//structure variable of Address
+    
+}p1 ;   					//structure variable of Person
+void main()
+{
+	p1.con_no=982772273;
+	strcpy(p1.name , "seema");
+	
+	strcpy(p1.a1.city , "pune");
+	p1.a1.pin=400038;
+	strcpy(p1.a1.phone,"9887625255");
+	
+	printf("\nperson conact no = %d",p1.con_no);
+	printf("\nperson name = %s\n",p1.name);
+	
+	printf("address city = %s \npin = %d \nphone = %s",p1.a1.city,p1.a1.pin,p1.a1.phone);
+	
+}
+/*
+output:
+	
+person conact no = 982772273
+person name = seema
+address city = pune
+pin = 400038
+phone = 9887625255   */
+
+
+*typedef keyword in C
+The typedef is a keyword used in C programming to provide some meaningful names to the already existing variable in the C program. 
+
+It behaves similarly as we define the alias for the commands. 
+ 
+In short, we can say that this keyword is used to redefine the name of an already existing variable.
+
+=>Syntax of typedef
+typedef <existing_name> <alias_name/new name>  
+
+'existing_name'(old name) is the name of an already existing variable while 'alias name'(new name) is another name given to the existing variable.
+
+e.g
+
+typedef  int unit;  
+In the above statements, we have declared the unit variable of type int by using a typedef keyword.
+
+Now, we can create the variables of type  int by writing the following statement:
+
+unit a, b;   
+instead of writing:
+
+ int a, b;  
+
+
+Till now, we have observed that the typedef keyword provides a nice shortcut by providing an alternative name for an already existing variable. 
+
+This keyword is useful when we are dealing with the long data type especially, structure declarations.
+
+
+//PROGRAM
+
+//Program that shows the use of typedef keyword in c
+#include<stdio.h>
+main()
+{
+
+
+    typedef float Pooja;
+    Pooja  a=19.0;
+    
+    printf("a = %f",a);
+    
+    Pooja  b=2.1;
+    
+    Pooja c=a+b;
+    printf("\n\naddition %f",c);
+}
+
+/*
+a = 19.000000
+
+addition 21.100000 */
+
+
+
+
+*****Typedef keyword with structure
+
+
+//PROGRAM
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct Fruit
+{
+	int f_price;
+	char f_name[45];
+	char f_shape[56];
+}F;     //create an alias of struct Fruit
+ 
+int main()
+{
+  	F  f1;  //F is alias of struct Fruit is used here
+	
+	//f1.f_price = 45;
+	printf("\nEnter the fruit price , fruit name , fruit shape : \n");
+	scanf("%d %s %s",&f1.f_price,f1.f_name,f1.f_shape);
+		printf("\n **** Displaying Fruit Info ****");
+	
+	printf("\nfruit_price : %d \nfruit_name : %s \nfruit_shape  : %s",f1.f_price,f1.f_name,f1.f_shape);
+    return 0;	
+}
+/*
+output:
+   
+Enter the fruit price , fruit name , fruit shape :
+30
+apple
+circular
+
+ **** Displaying Fruit Info ****
+fruit_price : 30
+fruit_name : apple
+fruit_shape  : circular */
+
+
+*we conclude that typedef keyword reduces the length of the code and complexity of data types. 
+
+
+*Array of Structures in C
+An array of structres in C can be defined as the collection of multiple structures variables(s1,s2,s3...s10) where each variable contains information about different entities.
+
+The array of structures in C are used to store information about multiple entities of different data types.
+
+The array of structures is also known as the collection of structures.
+
+//PROGRAM
+
+#include<stdio.h>  
+#include <string.h>    
+
+struct Car 
+{    
+     int speed;    
+     char fuel[10];    
+};
+
+int main()
+{
+	int i;
+	
+	struct Car c1[3];    //array of structure
+	
+	printf("Enter a record of car..\n");
+	for(i=0;i<3;i++)
+	{
+		printf("\nenter speed : ");
+		scanf("%d",&c1[i].speed);
+		
+		printf("\nenter fuel : ");
+		scanf("%s",&c1[i].fuel);
+	}
+	
+	printf("\nCar info list..");
+	for(i=0;i<3;i++)
+	{
+		printf("\nspeed : %d, fuel : %s\n\n",c1[i].speed,c1[i].fuel);
+		
+	}
+	
+}
+
+/*output
+Enter a record of car..
+
+enter speed : 80
+
+enter fuel : prtrol
+
+enter speed : 70
+
+enter fuel : CNG
+
+enter speed : 70
+
+enter fuel : diesel
+
+Car info list..
+speed : 80, fuel : prtrol
+
+
+speed : 70, fuel : CNG
+
+
+speed : 70, fuel : diesel */    
+

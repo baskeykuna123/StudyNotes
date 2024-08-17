@@ -1,0 +1,41 @@
+//program to show the use of nested if.(find the greatest among 3 numbers)
+#include<stdio.h>
+int main()
+{
+	int n1=8,n2=23,n3=1000;
+	
+	//n1>n2,n1>n3,n2>n3 
+	
+	if(n1>=n2)   //if it is true then it goes inside the block, but cond1 false then it executes its respective   part
+       {  
+           if(n1>=n3)          //if the cond2 is true then it executes block,but if the cond2 is false then it executes its respective else part
+           {
+               printf("n1 is greater..");    
+           }
+    	   else
+           {
+               printf("n3 is greater");
+           } 
+        
+    }
+    else
+      {
+           if(n2>=n3)        //if cond3 is true the it executes its respective block but if cond3 is false  then its respective else block gets executes
+           {
+ 		printf("n2 is greater..");
+           }
+ 	    else
+           {
+            printf("n3 is greater");
+           }
+      
+     }
+      
+}
+/* 
+output:
+
+n3 is greater   */
+
+
+

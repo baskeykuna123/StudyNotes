@@ -1,0 +1,52 @@
+//program to show the use of  switch case statement(find whether the character entered by the user is vowel or consonent )
+
+//A to Z
+//vowels=> a,e,i,o,u =5
+//consonent   21
+
+#include<stdio.h>  
+int main()
+{
+	char ch;
+	
+    printf("Enter the char :  ");  ///b
+    scanf("%c",&ch);
+    
+    switch(ch)                 //choice or variable enter by the user
+    {
+    	case 'a': 									//a,e,i,o,u are the vowels 
+    		printf("%c is vowel ",ch);
+    	    break;
+    	
+    	case 'e':
+    		printf("%c is vowel",ch);
+    		break;
+    		
+    		
+    	case 'i':
+    		printf("%c is vowel",ch);
+    	    break;
+    	
+    	case 'o':
+    		printf("%c is vowel",ch);
+    	    break;
+    	    
+    	case 'u':
+    		printf("%c is vowel",ch);
+    	    break;
+    	    
+    	 default:                               //if above cases are not match with the character entered by the user then this default block will be executes
+		 printf("%c is consonet",ch);  
+    	    
+    	    
+    	    
+	}
+}
+*/ output:
+
+Enter the char :  u
+u is vowel
+
+Enter the char :  y
+y is consonet
+

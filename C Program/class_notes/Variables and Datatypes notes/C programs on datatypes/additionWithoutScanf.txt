@@ -1,0 +1,28 @@
+
+//program to find the addition two integer number(give the values in the program/at compile time)
+//without using scanf() function
+
+#include<stdio.h>
+
+ main()
+{
+	//r, u both are local variables as we can declared them inside  function
+	int r;  //variable declaration  //r stores number values so declaring r as a int type
+	r=10;   //variable initailization
+	  
+	int u;
+	u=20;     
+	
+    int  d =r+u; //here d is a variable that stores the addition of r and u
+                 //similary you can do subtraction, multiplication, division only by changing symbols like r-u,r*u,r/u
+ 
+	printf("addition = %d" , d); //to print the result on command prompt we use printf() fuction which is define inside stdio.h header fiel
+	  							//while printing the result of something on command prompt we need to mention format specifier in printf function
+	  							 // %d format specifier is used to print integer/number values
+	
+}
+//output
+//addition = 30
+
+
+

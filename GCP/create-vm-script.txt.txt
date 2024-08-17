@@ -1,0 +1,15 @@
+#! /bin/bash
+apt update
+apt -y install apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Hello World. This machine is running in us-east1-b</h1>
+</body></html>
+EOF
+
+#! /bin/bash
+apt update
+apt -y install apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Hello World. This machine is running in us-east1-c</h1>
+</body></html>
+EOF

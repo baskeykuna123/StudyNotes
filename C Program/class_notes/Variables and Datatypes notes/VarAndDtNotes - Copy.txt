@@ -1,0 +1,396 @@
+ ******VARIABLES & DATATYPES********
+    
+-It is container that holds values/data of your program. Variable is nothing  but memory representator of the data which you can use in your program
+
+
+- The data which we want to display as an output that data needs to be store in some name(human readable name) or in some indenfier
+  and that identifier name is nothing but variable. 
+
+
+Q.need of varaible?
+=> if you use values instead of variables, then if you want to change the value of variable you have to change the value of that variable everywhere where you can use that value.
+
+So instead of directly using values we can stored that values inside one name/container and that name is called as variable. so there is no need to upadate the value of that data everywhere where you could use it.
+
+ 
+**If you want to use any variable in your program first you have to do 2 steps :
+
+ 1.variable declaration/write =>     char ch;  //declaration  => means defining/writing variable name in our program 
+ 2. Initialization            =>     char ch = 'p'; //initialization => means assigning/add/store values in the variable 
+
+
+
+
+   
+*****RULES FOR DEFINING THE VARIABLES:
+
+   1. variable name should not be start with digit.
+        
+         e.g int number = 56;      //valid variable 
+         e.g int nu45mber = 56;   //invalid variable declaration //var name should not be start with digit.
+   
+   
+   2. white space is not allow at a time of writing a variable
+          
+          e.g int number = 56;   //valid variable 
+          e.g int nu mber = 56;   //invalid variable declaration //white space is not allow at a time of writing a variable
+
+ 
+    3. In variables both uppercase and lowercase letters are distinct. e.g xyz and XYZ both So we acn say that identifiers are case           sensitive
+          
+       e.g int number = 56;   //valid variable 
+       e.g int NUMBER = 56;   //valid variable //because both uppercase and lowercase letters are distinct.
+       e.g int number = 68;   //invalid variable decaration because number variable is already decalred above
+
+     4. Commas and blank spaces cannot be specified at the time of writing or defining identifier
+        
+       e.g int number = 56;   //valid variable 
+       e.g int num,ber = 56;   //invalid variable //because Commas and blank spaces cannot be specified at the time of writing or        defining identifier
+
+
+   5. Keywords can not be used as indefier name
+        e.g int number = 56;   //valid variable 
+        e.g int main = 56;   //invalid variable //because Keywords can not be used as variable name
+
+
+   6. The length of the identifier/variable  name should not be more than 31 letters
+
+   7. Identifier name should be simple, short,meaningful and disriptive.
+  
+   
+
+   8. Special Symbols are not allow except _ (underscore)  -_
+           e.g !##$$$@^&*()<>{}~!+   This symbols are not allow
+  
+
+      e.g int number =78;    //valid variable 
+      e.g int num%&ber = 56;   //invalid variable //because Special Symbols are not allow except _ (underscore)
+      e.g int num_ber = 56;   //valid variable  //only underscore symbol is allow
+ 
+  9. Variable should be declare before used in the prog
+
+
+
+
+2. Types OF variables
+   i. local variables
+      -The  variables are declared inside the function or block is called  as local variables.
+      -It must be declared at start of the block
+
+     e.g
+      void fun1()
+      {
+
+          int x=10,y=6,c;        //x,y,c are the local var of fun1,we can't access these variables outside the fun1()
+          printf("%d",x);
+        
+          void fun2()           //d is a local variable for fun2
+          {
+               float d=12.5;
+          }
+
+          printf("%d",d);
+          c=x+y;
+          printf("%d",c);
+
+      }
+      
+
+       ii. global variables
+           - A var that is declared outside the fun or block is called as global var.
+           - Any function can change the value of global var. It is available for all the function
+
+	  E.g
+            #include<stdio.h>
+              int x=10,y=5,z;         //x,y,z are the  global variables because it is declared outside the main() or on top of the                 			//proram and it can be used throughout the program
+              
+              void fun1_add()      
+              {  
+                 
+                 z=x+y;
+                 printf("%d",z);
+               }
+
+              void fun2_sub()
+              {
+                 x=20;
+                  z=x-y;
+		printf("%d",z);
+               }
+
+      iii. static varibles
+           
+      iv. automatic varibles
+        
+      v. external var
+           
+
+
+**DATATYPES
+
+  Datatypes specify the size and type of data associated with variables. 
+   
+  ***types of Datatype
+      1. basic datatypes/primitive/inbuilt/predefined  
+      2. void
+      3. derived(userdefined) => it is generated from something 
+     
+ 
+      1. Basic datatypes/primary/fundamental/primitive datatype(inbuilt)
+          
+          i.integer based and floating point based
+            -the memory size of the basic datatypes may change acccording to the architecture of the system whether it is 32 bit or 64               bit
+  
+            -we can specify the size according to 32 bit and 64 bit architecture
+       
+            - signed integer(with positive ,negative values)   e.g int a=10,b=-10;
+            - unsined integer(only positive values)    e.g  int a=10;
+	    - short,long							
+      
+         
+
+          ii.floating point based   56.8
+             - the floating point datatypes allows user to type the decimal/fraction values
+             - consists of float(4-byte) and double(8-byte)
+        
+          e.g float marks=70.88;
+          e.g double score=70.88888;
+          
+          iii. char(1 byte)
+              - stores a single character. It consists of single byte i.e size of char
+              - for single character declaration, we can define this character inside single quotes
+                char ch11_='d';
+    
+   
+   2. The void type
+         The void type specifies that no value is available. In is used in 3 cases
+            i. function returns as void 
+ 		-there are various functions in c which do not return any value or you can say that they return void. The fun which do                  not have any value they use return type void
+       
+		e.g   void main()
+        	e.g   void swap()
+		e.g   void  add()
+
+            ii.function argument as void
+               -there are various function in c which do not accpets any parameters/arguments. A no parameter can accept void
+   
+               e.g int random(void)
+      
+            iii. pointers to void 
+                - A pointer of type void represents the address of an object but not its type     
+                  e.g void *malloc()
+
+   
+    3. derived datatype/userdefined
+      
+       - It is derived from basic datatype(int,float,char double)
+        
+       -Array,pointers,structures and union are the derived datatye in c
+        
+        i). Array
+           -It is collection of multiple elements having similar types.
+
+           -Array can be integer type,float type,character
+           
+          e.g 
+                       0  1  2   3     //index no(it always starts from 0)
+           int a[20]={11,12,13,14};   //integer type array
+           printf("%d ",a[2])         //accessing 2nd index position element
+
+
+
+           float f[50] ={4.5,6.7,8.3,5.5,60.0,78.9}   //float array
+           printf("%f ",a[2])                         //accessing 2nd index position element
+
+           char ch[40]={'p','o','j','a',}       //character array=> char array used to represent string in c programming
+            char c='m';                         //declaring single character
+           
+
+            2. Structure
+           
+              - It is collection of multiple elements having different types.
+               e.g
+              struct employee
+               {
+   		 int id=111;
+   		 char name[12]="rakesh";
+		float salary=50000.5;
+                 double ba_sal=34000.4;
+               }emp;
+      
+        printf("%d",emp.id);
+        printf("%c",emp.name);
+        printf("%f",emp.salary);
+        printf("%lf",emp.ba_sal);
+
+
+          
+
+3. union
+            
+It is collection of multiple elements having different types. union is similar to structure but the difference is, 
+in case of union separate memory area is not allocate to each and every var/data of union. Intstead of that one large area is allocate to the larger sizeof var and that larger size of var shraed its space to other var declared inside union. while in caseof structure every var has separate area in memory 
+               
+               union employee
+               {
+   		 int id;
+   		 char name[12];
+		float salary;
+                 double ba_sal;
+              }emp;
+              
+             emp.id=1;
+             printf("%d",emp.id);
+  
+      	  strcpy(emp.name,"abc");
+             printf("%c",emp.name);
+  
+        printf("%f",emp.salary);
+        printf("%lf",emp.ba_sal);
+
+     
+       3. pointer
+         - pointer is just variable used to store the address of another variable e.g a,b.   
+          
+         - pointer can store the address of any types of variable
+          
+         -to get the address of the variable we can the dereference operator '&'is 
+          
+         -the size of pointer is 2-byte  %p  => ox744
+          
+
+e.g   
+           
+
+           int *ptr1,*ptr2;           // here * operator/symbol defines that the variable is pointer variable
+           int a=-5,b=5;     
+   
+            ptr1=&a;               //address of var a is stored/assign inside the ptr1 pointer var
+            ptr2=&b;                //address of var b is stored/assign inside the ptr2 pointer var
+
+            printf("the value of a using ptr1 =%d",ptr1);
+            printf("the value of b using ptr2 = %d",ptr2);
+       
+        
+****FORMAT SPECIFIER 
+    
+   - format specifier define the type of data to be printed on the console/standard output device(monitor). 
+   - you need to use format specifier whether you are printing formatted output with printf() or accepting input with scanf() 
+
+
+%c           a single char 
+%s           a string(multiple char or colletion char)  
+%hi          short(cnegative,positive))
+%hu          short(unsigned(positive))
+%lf          double/long double
+%d           a decimal integer/int   (decimal no is within range of 0 to9)
+%o           an octal integer        (octal 0 to 7)
+%x           hexadecimal            (hexa 0 to 15  0-9 10=A,11=B.....15=F)
+%p           an address of pointer
+%f           floating point num
+%u           int unsigned decimal
+%e or %E       a float point number in scientific notation
+%ld           long
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+    
+     
+
+            
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+       
+     
+       
+          
+        
+     
+           
+  
+
+
+
+
+
+
+
+
+
+
+   

@@ -1,0 +1,20 @@
+//program to show the use of single if statement(find the greater num between 2 numbers )
+
+#include<stdio.h>  
+int main()
+{
+	int x=60,y=100;
+	
+	
+	if(x>y)       //if cond is true the if block executes. if the condition is false we get nothing in the output. that is the disadvantage of if
+        {
+        printf("x is greater ");
+	}
+ }
+
+/*
+output :
+             //here we get nothing in the output because, condition in the if statement is false so if block is not executes.
+
+
+*/

@@ -1,0 +1,44 @@
+//program to show the use of while loop(print the even numbers between series between 0 to 50)
+
+#include<stdio.h>       							 
+int main()
+{
+	int i=0;        		//initializtion   								 ///starting point of series
+	
+     while(i<=50)      			//condition   	//this loop execute until the condition is true						
+	{
+	 printf("\ntick tick %d",i);      				  
+	 i=i+2;
+	           					//incre/decre 							
+	}
+	
+}
+/*
+output:
+
+tick tick 0
+tick tick 2
+tick tick 4
+tick tick 6
+tick tick 8
+tick tick 10
+tick tick 12
+tick tick 14
+tick tick 16
+tick tick 18
+tick tick 20
+tick tick 22
+tick tick 24
+tick tick 26
+tick tick 28
+tick tick 30
+tick tick 32
+tick tick 34
+tick tick 36
+tick tick 38
+tick tick 40
+tick tick 42
+tick tick 44
+tick tick 46
+tick tick 48
+tick tick 50    */

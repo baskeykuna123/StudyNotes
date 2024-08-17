@@ -1,0 +1,30 @@
+//program to show the use of if else statement(check whether the no is even or odd )
+
+#include<stdio.h>  
+int main()
+
+{                           			        
+	int x; 
+	
+	printf("\n enter the number....");  //59
+         scanf("%d",&x);                                        
+	
+	         
+         if(x%2==0)      //if cond is true the if block executes.
+         {
+             printf("even number");
+        }
+        else            // the condition in if block is false then else part gets execute
+        {
+            printf("odd number ");
+        }
+	 
+	 //printf("\nbye");
+	 
+}
+
+/*
+output:
+
+enter the number.... 59
+odd number    */

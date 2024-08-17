@@ -1,0 +1,28 @@
+
+//program to find the addition two float number(give the values in the program/at compile time)
+//without using scanf() function
+
+#include<stdio.h>
+
+ main()
+{
+	//r, u both are local variables as we can declared them inside  function
+	float r;  //variable declaration  //r stores floating point values so declaring r as a float type
+	r=10.5;   //variable initailization
+	  
+	float u;
+	u=20.6;     
+	
+    float  d =r+u; //here d is a variable that stores the addition of r and u
+                 //similary you can do subtraction, multiplication, division only by changing symbols like r-u,r*u,r/u
+ 
+	printf("addition = %f" , d); //to print the result on command prompt we use printf() fuction which is define inside stdio.h header fiel
+	  							//while printing the result of something on command prompt we need to mention format specifier in printf function
+	  							 // %f format specifier is used to print floating values
+	
+}
+//output
+//addition = 31.100000
+
+
+

@@ -1,0 +1,29 @@
+//program to show the use of while loop(print the reverse series between 10 to 1)
+
+#include<stdio.h>       							 // 10,9,8,.....,2,1
+int main()
+{
+	int i=10;        		//initializtion   								 ///starting point of series
+	
+     while(i>0)      			//condition   	//this loop execute until the condition is true						
+	{
+	 printf("\ntick tick %d",i);      				  //10,9,8....1
+	 i--;
+	           					//incre/decre 							
+	}
+	
+}
+/*
+
+output:
+
+tick tick 10
+tick tick 9
+tick tick 8
+tick tick 7
+tick tick 6
+tick tick 5
+tick tick 4
+tick tick 3
+tick tick 2
+tick tick 1 */

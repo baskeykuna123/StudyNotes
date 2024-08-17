@@ -1,0 +1,26 @@
+//Program to show the use of different datatypes in c
+
+#include<stdio.h>
+
+ main()
+{
+	
+	int no =10;    //no stores number values so declaring no as int type
+ 
+	float num= 34.6; ///num stores floating point number values so declaring num as float type
+   
+    char ch = 'v'; //ch stores 'v' character so declaring ch as char type. We always declared character in single quotes
+                 
+ 
+	printf("Integer value no is = %d" , no); //to print the result on command prompt we use printf() fuction which is define inside stdio.h header fiel
+	  							           //// %d format specifier is used to print integer/number values on console/command prompt
+	  							           
+	printf("\nFloating point value num is = %f" , num); //%f format specifier is used to print floating point values on console/command prompt
+	
+	printf("\ncharacter  value ch is = %c" , ch); //%c format specifier is used to print single character on console/command prompt
+	
+}
+/* output
+Integer value no is = 10
+Floating point value num is = 34.599998
+character  value ch is = v */

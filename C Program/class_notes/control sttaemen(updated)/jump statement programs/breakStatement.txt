@@ -1,0 +1,22 @@
+//programm to show the use of jump statement break
+
+#include<stdio.h>
+main()
+{
+	int i;
+	for(i=0;i<=10;i++)
+	{
+		if(i==5)
+		    break;         //as i has value 5 this loop gets terminate because the cobndition gets satisfy and control jump out of this if statement
+		    
+		printf("\n%d",i);
+		
+	}
+}
+/*
+output:
+0
+1
+2
+3
+4        //as i==5 the loop gets break   */

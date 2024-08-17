@@ -1,0 +1,25 @@
+//program to initialize multiple variables inside single for loop
+
+#include<stdio.h>    //1,2,3,4,....10
+int main()
+{
+	
+    int i,k;         //declaration
+	for(i=1,k=4;i<k;i++,k--)  			   //we can initialized multiple variables(e.g i,k here) inside for loop by separatig them with commas	   
+    {
+		printf("\n i val=%d",i);         // initializtion -> condition ->printf() ->incre/decre 
+		printf("\n k val=%d",k);  
+										
+    }
+	
+	
+	 return 0;
+}
+
+/*
+output:
+
+ i val=1
+ k val=4
+ i val=2
+ k val=3*/

@@ -1,0 +1,32 @@
+//program to find the addition two integer numbers(give the values at run time using sacnf() function)
+//without using scanf() function
+
+#include<stdio.h>
+
+ main()
+{
+	//r, u both are local variables as we can declared them inside  function
+	int r;  //variable declaration   //r stores number values so declaring r as a int type
+	r=10;   //variable initailization
+	  
+	int u;
+	u=20;     
+	
+	printf("Enter 2 numbers for addition : "); //the message which we want to print on the command prompt for user, that message will be given inside printf()
+    scanf("%d %d",&r,&u);     //here we are enter 2 values on console one is stored inside r variable and second is stored inside u variable. So using &r, &u
+	
+	int  d =r+u; //here d is a variable that stores the addition of r and u
+				//similary you can do subtraction, multiplication, division only by changing symbols like r-u,r*u,r/u
+
+	printf("\naddition = %d" , d); //to print the result on command prompt we use printf() fuction which is define inside stdio.h header fiel
+	  							//while printing the result of something on command prompt we need to mention format specifier in printf function
+	  							 // %d format specifier is used to print integer/number values
+	
+}
+//output
+//Enter 2 numbers for addition : 30  5
+
+//addition = 35
+
+
+
